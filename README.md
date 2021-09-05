@@ -1,12 +1,12 @@
-# Web Idiea del Lupa
+# TRABAJO 1 GRAFOS
 
 
 ## Descripcion 
 > **Nota** agregar una descripcion porque no se me ocurre nada xd
 
 ## integrantes
-  - Lupa
-  - McFlay
-  - Mel
-  - Pau
-  - Chino
+  - Lucas 
+  - Nicolas 
+  - Rocio 
+  - Paula
+  - Victor
