@@ -19,3 +19,15 @@
 .list-group {
   width: 65%;
 }
+.green{
+  background-color: green;
+}
+.grey{
+  background-color: grey;
+}
+.red{
+  background-color: rgb(240, 87, 60);
+}
+.white{
+  background-color: white;
+}
