@@ -1,12 +1,33 @@
 <?php
-$n = $_POST["nodoinicial"];
-$a = $_POST ["nodofinal"];
+/**
+ * Un simple archivo que configura el log, oculta
+ * los errores y crea un nuevo archivo cada día
+ *
+ */
+# El directorio o carpeta en donde se van a crear los logs
+# da algo como C:\xampp\esta_carpeta\logs
+define("RUTA_LOGS", __DIR__ . "/logs");
+# Crear carpeta si no existe
+if (!file_exists(RUTA_LOGS)) {
+    mkdir(RUTA_LOGS);
+}
+# Poner fecha y hora de México, esto es por si el servidor tiene
+# otra zona horaria
+date_default_timezone_set("America/Santiago");
 
-echo "Mi Nodo inicial es $n  y el nodo final es $a "."<br/>";
-
-
-
+# Configuramos el ini para que...
+# No muestre errores
+ini_set('display_errors', 0);
+# Los ponga en un archivo
+ini_set("log_errors", 1);
+# Y le indicamos en dónde los va a poner, sería en algo como:
+# RUTA_LOGS/2019-02-07.log
+# Así cada día tenemos un archivo de log distinto
+ini_set("error_log", RUTA_LOGS . "/" . date("d-m-y h:i:s") . "log.log");
+# Listo, ahora asegúrate de incluir lo de arriba en el encabezado o un archivo
+# común que se ejecute siempre al inicio
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -199,8 +220,8 @@ echo "Mi Nodo inicial es $n  y el nodo final es $a "."<br/>";
             <div class="col-4">
             <form action ="./back.php"method ="post" >
         
-        Nodo inicial: <input type ="number" name ="nodoinicial" class="form-control"/>
-        Nodo final :<input type ="number" name ="nodofinal" class="form-control"/>
+        Nodo inicial: <input type ="number" name ="nodoinicial" class="form-control" min="0" max="7" />
+        Nodo final :<input type ="number" name ="nodofinal" class="form-control" min="0" max="7"/>
 
         <input type ="submit" value = "dame click!" class= "btn btn-outline-success mt-3 mb-3"/>
                 </form>
@@ -230,10 +251,11 @@ echo "Mi Nodo inicial es $n  y el nodo final es $a "."<br/>";
                     <button type="submit" class="btn btn-outline-success mt-3 mb-3">Crear Grafo</button>
                 </form>
                 <ul class="list-group">
-                    <li class="list-group-item ">parque</li>
-                    <li class="list-group-item ">calle</li>
-                    <li class="list-group-item ">cruce</li>
-                    <li class="list-group-item ">casa</li>
+                    <li class="list-group-item blueviolet">Simbologia: </li>
+                    <li class="list-group-item green ">parque</li>
+                    <li class="list-group-item grey">calle</li>
+                    <li class="list-group-item red">cruce</li>
+                    <li class="list-group-item white">casa</li>
                 </ul>
             </div>
         </div>
