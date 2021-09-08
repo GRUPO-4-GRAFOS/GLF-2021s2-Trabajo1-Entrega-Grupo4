@@ -1,3 +1,4 @@
+
 <?php
 
 define('NUMBER_OF_NODES', 8);
@@ -41,8 +42,10 @@ function getNextEdge($adjacentList, $nodesInTree, $nodesNotInTree)
     echo 'IN '.implode(',', $nodesInTree)
         .' NOT IN '.implode(',', $nodesNotInTree)
         .' NEXT EDGE TO ADD '.$edge.'('.$minCost.')'.PHP_EOL;
+        echo '<br>';
 
     return $nextNode;
+    
 }
 
 function fillRandomCosts(&$adjacentList)
@@ -67,7 +70,14 @@ function printToScreen($adjacentList)
     for ($i = 0; $i < NUMBER_OF_NODES; ++$i) { echo $i; foreach ($adjacentList[$i] as $key => $value) {
             echo ' --> '.$key.'('.$value.')';
         }
+        echo '<br>';
         echo PHP_EOL;
     }
 }
 ?>
+
+<form action ="./index.php"method ="post" >
+<div style="text-align: center;">
+ <input type ="submit" value = "Volver" style='width:70px; height:40px' class= "btn btn-outline-success mt-3 mb-3"/>
+        </form>
+        </div>
