@@ -38,7 +38,8 @@ ini_set("error_log", RUTA_LOGS . "/" . date("d-m-y h:i:s") . "log.log");
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/vis.min.css">
     <title>Trabajo 1</title>
 </head>
 
@@ -218,19 +219,19 @@ ini_set("error_log", RUTA_LOGS . "/" . date("d-m-y h:i:s") . "log.log");
             </div>
             <!--Inicio Formulario-->
             <div class="col-4">
-            <form action ="./back.php"method ="post" >
-        
-        Nodo inicial: <input type ="number" name ="nodoinicial" class="form-control" min="0" max="7" />
-        Nodo final :<input type ="number" name ="nodofinal" class="form-control" min="0" max="7"/>
+                <form action="./back.php" method="post">
 
-        <input type ="submit" value = "dame click!" class= "btn btn-outline-success mt-3 mb-3"/>
+                    Nodo inicial: <input type="number" name="nodoinicial" class="form-control" min="0" max="7" />
+                    Nodo final :<input type="number" name="nodofinal" class="form-control" min="0" max="7" />
+
+                    <input type="submit" value="dame click!" class="btn btn-outline-success mt-3 mb-3" />
                 </form>
-                <form action ="./arbol.php"method ="post" >
-        
-        Ver Arbol Prim --->
-    
+                <form action="./arbol.php" method="post">
 
-         <input type ="submit" value = "dame click!" class= "btn btn-outline-success mt-3 mb-3"/>
+                    Ver Arbol Prim --->
+
+
+                    <input type="submit" value="dame click!" class="btn btn-outline-success mt-3 mb-3" />
                 </form>
                 <form>
                     <fieldset>
@@ -260,6 +261,8 @@ ini_set("error_log", RUTA_LOGS . "/" . date("d-m-y h:i:s") . "log.log");
             </div>
         </div>
     </div>
+
+    <script src="./js/vis.min.js"></script>
 </body>
 
 </html>
