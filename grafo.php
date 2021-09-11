@@ -1,19 +1,18 @@
 <?php
 $n = $_POST["cantnodo"];
 $a = $_POST["tipografo"];
+date_default_timezone_set("America/Santiago");
+$fechaActual = date ( 'd-m-Y H:i:s' );
 if ($n != NULL){
     
     $fi=fopen("archivo.log", "a");
     //or die("problemas al crear archivo.txt");
-     fwrite($fi, "Datos: ");
-     fwrite($fi, "\n");
-     fwrite($fi, "La cantidad de nodos es: ");
+     fwrite($fi, $fechaActual);
+     fwrite($fi, "   [grafo.php]El usuario ha seleccionado la cantidad de nodos: ");
      fwrite($fi, $n);
-     fwrite($fi, "\n");
-     fwrite($fi, "El tipo de grafo es: ");
+     fwrite($fi, ", El usuario ha seleccionado el tipo de grafo: ");
      fwrite($fi,$a);
      fwrite($fi, "\n");
-     fwrite($fi,"-------------------- \n\n");
      fclose($fi);
    }
 
