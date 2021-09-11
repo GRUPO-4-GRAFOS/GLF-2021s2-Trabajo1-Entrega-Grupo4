@@ -40,27 +40,36 @@
           <div id="container"></div>
         </div>
         <div class="col-4">
-          <form id="formulario-grafo" class="mt-4" id="nodo">
-            <input placeholder="Ingresar Nodo" class="form-control" />
+          <form class="mt-4">
+            <input
+              placeholder="Ingresar Nodo"
+              class="form-control"
+              name="nodo"
+              id="inputNodo"
+            />
             <input
               type="submit"
               class="btn btn-success mt-3 mb-3"
               value="Agregar"
+              id="form-nodo"
             />
           </form>
-          <form id="arista">
+          <form>
             <input
               placeholder="Ingrese arista de inicio"
               class="form-control"
+              id="nodoInicio"
             />
             <input
               placeholder="Ingrese arista final"
               class="form-control mt-3"
+              id="nodoFin"
             />
             <input
               type="submit"
               class="btn btn-success mt-3 mb-3"
               value="agregar"
+              id="form-arista"
             />
           </form>
         </div>
