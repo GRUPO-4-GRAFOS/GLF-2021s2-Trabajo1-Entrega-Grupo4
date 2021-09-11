@@ -1,19 +1,7 @@
 
 <!DOCTYPE html>
-<html lang="es" xml:lang="es">
+<html lang="es">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;400&display=swap" rel="stylesheet">
-    <p style="background:#FF813E; color:white; font-weight:bold; padding:15px; border:3px solid #B34F19; margin-top:40px; margin-bottom:40px; text-align:center; font-size:40px; border-radius:10px;">Trabajo 1: Grafos</p>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="style.css" type="text/css">
-    
-</head>
 
 <body>
 
@@ -22,12 +10,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
-  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/vis.min.css">
+    <title>Trabajo 1</title>
+
 </head>
 
 
   
             <div class="col-4">
+
             <div style="text-align: center;">
 
                 <form action ="./grafo.php"method ="post" >
@@ -52,6 +46,8 @@
             </div>
         </div>
     </div>
+
+    <script src="./js/vis.min.js"></script>
 </body>
 
 </html>
