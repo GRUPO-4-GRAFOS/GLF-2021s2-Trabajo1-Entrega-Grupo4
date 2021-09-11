@@ -1,30 +1,68 @@
 let contendor = document.querySelector('#container');
-let nodo = document.querySelector('#nodo');
+const formNodo = document.querySelector('#form-nodo');
+const formArista = document.querySelector('#form-arista');
 
-const nodos = new vis.DataSet([
-  { id: 1, label: '1' },
-  { id: 2, label: '2' },
-  { id: 3, label: '3' },
-  { id: 4, label: '4' },
-  { id: 5, label: '5' },
-  { id: 6, label: '6' },
-]);
+let nodos = [];
+let aristas = [];
 
-const aristas = new vis.DataSet([
-  { from: 1, to: 3 },
-  { from: 1, to: 2 },
-  { from: 3, to: 4 },
-  { from: 5, to: 1 },
-  { from: 6, to: 2 },
-]);
+formNodo.addEventListener('click', event => {
+  event.preventDefault();
+  const inputNodo = document.querySelector('#inputNodo');
 
-const datos = {
-  nodes: nodos,
-  edges: aristas,
+  const nodo = {
+    id: nodos.length + 1,
+    label: inputNodo.value,
+  };
+
+  const nomNodo = nodos.filter(
+    nodo => nodo.label === inputNodo.value
+  );
+
+  if (nomNodo.length !== 0) {
+    alert('Ese nodo ya exsite');
+    return;
+  }
+
+  nodos.push(nodo);
+
+  lanzarNetwork();
+
+  inputNodo.value = '';
+});
+
+formArista.addEventListener('click', event => {
+  event.preventDefault();
+
+  const nodoInicio = document.querySelector('#nodoInicio');
+  const nodoFin = document.querySelector('#nodoFin');
+
+  const nodo1 = nodos.filter(nodo => nodo.label === nodoInicio.value);
+  const nodo2 = nodos.filter(nodo => nodo.label === nodoFin.value);
+
+  const arista = {
+    from: nodo1[0].id,
+    to: nodo2[0].id,
+  };
+
+  aristas.push(arista);
+
+  lanzarNetwork();
+
+  nodoInicio.value = '';
+  nodoFin.value = '';
+});
+
+const lanzarNetwork = () => {
+  const nodes = new vis.DataSet(nodos);
+
+  const edges = new vis.DataSet(aristas);
+
+  const datos = {
+    nodes: nodes,
+    edges: edges,
+  };
+
+  const opciones = {};
+
+  const network = new vis.Network(contendor, datos, opciones);
 };
-
-const opciones = {
-  StyleSheetList,
-};
-
-let grafo = new vis.Network(contendor, datos, opciones);
