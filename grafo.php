@@ -50,7 +50,7 @@ else {
             for($j = 0; $j < $n; $j++){
                 ?>
                     <td>
-                        <?php echo $i ?> <!-- aca va el dato que se escribe dentro de cada cuadrito de la matriz-->
+                        <?php echo $i ?> <!-- aca va el dato que se escribe dentro de cada cuadrito de la matriz -->
                     </td>
                 <?php
             }
