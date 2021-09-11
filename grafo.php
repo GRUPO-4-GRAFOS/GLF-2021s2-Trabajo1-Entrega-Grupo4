@@ -7,6 +7,7 @@ if ($n != NULL){
     
     $fi=fopen("archivo.log", "a");
     //or die("problemas al crear archivo.txt");
+
      fwrite($fi, $fechaActual);
      fwrite($fi, "   [grafo.php]El usuario ha seleccionado la cantidad de nodos: ");
      fwrite($fi, $n);
@@ -17,13 +18,11 @@ if ($n != NULL){
    }
 
 else {
-    echo "Dato incompleto, vuelva y rellene la casilla";
+    echo "Datos incompletos o no seleccionados, vuelva y rellene la casilla";
 }
 
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,65 +44,28 @@ else {
         <input type="submit" value="Enviar"/>
 
 <table>
-    <tr>
-        <td> </td>
-        <td>ABCDE</td>
-    </tr>  
-    <tr>
-        <td>A</td>
-        <td><?php
-        $bin1 = $_POST['Conectado'] - 1;
-        $bin2 = $_POST ['Conectado1'] - 1 ; 
-        $Matriz = array (Array (0,0,0,0,0), Array (0,0,0,0,0), Array (0,0,0,0,0) , Array (0,0,0,0,0) , Array (0,0,0,0,0));
-        $Matriz[$bin1][$bin2]  = 1;
-        $i=0;
-            for($j= 0; $j <5; $j++){
-                echo " " .$Matriz[$i][$j];
-            }   
-        ?> </td>
-    </tr>
-    <tr>
-        <td>B</td>
-        <td><?php
-        $bin1 = $_POST['Conectado'] - 1;
-        $bin2 = $_POST ['Conectado1'] - 1 ; 
-        $Matriz = array (Array (0,0,0,0,0), Array (0,0,0,0,0), Array (0,0,0,0,0) , Array (0,0,0,0,0) , Array (0,0,0,0,0));
-        $Matriz[$bin1][$bin2]  = 1;
-        $i=1;
-            for($j= 0; $j <5; $j++){
-                echo " " .$Matriz[$i][$j];
-            }   
-        ?> </td>
-    </tr>
-    <tr>
-        <td>C</td>
-        <td><?php
-        $bin1 = $_POST['Conectado'] - 1;
-        $bin2 = $_POST ['Conectado1'] - 1 ; 
-        $Matriz = array (Array (0,0,0,0,0), Array (0,0,0,0,0), Array (0,0,0,0,0) , Array (0,0,0,0,0) , Array (0,0,0,0,0));
-        $Matriz[$bin1][$bin2]  = 1;
-        $i=2;
-            for($j= 0; $j <5; $j++){
-                echo " " .$Matriz[$i][$j];
-            }   
-        ?> </td>
-    </tr>
-    <tr>
-        <td>D</td>
-        <td><?php
-        $bin1 = $_POST['Conectado'] - 1;
-        $bin2 = $_POST ['Conectado1'] - 1 ; 
-        $Matriz = array (Array (0,0,0,0,0), Array (0,0,0,0,0), Array (0,0,0,0,0) , Array (0,0,0,0,0) , Array (0,0,0,0,0));
-        $Matriz[$bin1][$bin2]  = 1;
-        $i=3;
-            for($j= 0; $j <5; $j++){
-                echo " " .$Matriz[$i][$j];
-            }   
-        ?> </td>
-    </tr>
-    <tr>
+
+    <?php
+        for($i = 0; $i < $n; $i++){
+            ?>
+            <tr>
+            <?php
+            for($j = 0; $j < $n; $j++){
+                ?>
+                    <td>
+                        <?php echo $i ?> <!-- aca va el dato que se escribe dentro de cada cuadrito de la matriz -->
+                    </td>
+                <?php
+            }
+            ?>
+            </tr>
+            <?php
+        }
+    ?>
+    
+    <!-- <tr>
         <td>E</td>
-        <td><?php
+        <td><?php/*
         $bin1 = $_POST['Conectado'] - 1;
         $bin2 = $_POST ['Conectado1'] - 1 ; 
         $Matriz = array (Array (0,0,0,0,0), Array (0,0,0,0,0), Array (0,0,0,0,0) , Array (0,0,0,0,0) , Array (0,0,0,0,0));
@@ -112,7 +74,7 @@ else {
             for($j= 0; $j <5; $j++){
                 echo " " .$Matriz[$i][$j];
             }   
-        ?> </td>
+        */?> </td>
     </tr>
 </table>
 </body>
