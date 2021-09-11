@@ -5,6 +5,7 @@ const formArista = document.querySelector('#form-arista');
 let nodos = [];
 let aristas = [];
 
+//*Accion para agregar un nodo al arreglo
 formNodo.addEventListener('click', event => {
   event.preventDefault();
   const inputNodo = document.querySelector('#inputNodo');
@@ -30,6 +31,7 @@ formNodo.addEventListener('click', event => {
   inputNodo.value = '';
 });
 
+//*Accion para agregar una arista a 2 nodos
 formArista.addEventListener('click', event => {
   event.preventDefault();
 
@@ -38,6 +40,16 @@ formArista.addEventListener('click', event => {
 
   const nodo1 = nodos.filter(nodo => nodo.label === nodoInicio.value);
   const nodo2 = nodos.filter(nodo => nodo.label === nodoFin.value);
+
+  if (nodo1.length === 0) {
+    alert('Nodo de incio esta vacio o no existe en el grafo');
+    return;
+  }
+
+  if (nodo2.length === 0) {
+    alert('Nodo final esta vacio o no existe en el grafo');
+    return;
+  }
 
   const arista = {
     from: nodo1[0].id,
@@ -52,6 +64,7 @@ formArista.addEventListener('click', event => {
   nodoFin.value = '';
 });
 
+//*Funcion para redibujar el grafo
 const lanzarNetwork = () => {
   const nodes = new vis.DataSet(nodos);
 
