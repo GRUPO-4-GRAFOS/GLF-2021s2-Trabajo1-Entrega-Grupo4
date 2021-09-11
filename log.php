@@ -23,7 +23,7 @@ class log
 
 }
 
-$log = new log("log.log");
-$log->writeLine();
-$log->close()
+/*$log = new log("log.log");
+$log->writeLine("E","ha habido un error inesperado");
+$log->close()*/
 ?>

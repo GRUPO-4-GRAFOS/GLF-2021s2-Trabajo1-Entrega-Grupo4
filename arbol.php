@@ -1,4 +1,3 @@
-
 <?php
 
 define('NUMBER_OF_NODES', 8);

@@ -1,33 +1,7 @@
+
 .col {
   height: 100px;
   width: 100px !important;
   border: 1px solid black;
 }
 
-.calle {
-  background: rgb(170, 170, 170);
-}
-
-.cruce {
-  background: rgb(240, 87, 60);
-}
-
-.parque {
-  background-color: green;
-}
-
-.list-group {
-  width: 65%;
-}
-.green{
-  background-color: green;
-}
-.grey{
-  background-color: grey;
-}
-.red{
-  background-color: rgb(240, 87, 60);
-}
-.white{
-  background-color: white;
-}

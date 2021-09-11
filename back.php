@@ -1,28 +1,44 @@
-<?php
-$n = $_POST["nodoinicial"];
-$a = $_POST ["nodofinal"];
+<p style="background:#FF813E; color:white; font-weight:bold; padding:15px; border:3px solid #B34F19; margin-top:40px; margin-bottom:40px; text-align:center; font-size:22px; border-radius:10px;">Trabajo 1: Grafos</p>
 
-if ($n != NULL && $a != NULL){
-    if($n >=0 && $a >=0){
-        echo "Mi Nodo inicial es $n  y el nodo final es $a "."<br/>";
-    }
-    else {
-        echo "Numeros negativos, intente nuevamente";
-    }
-}
+
+<?php
+$n = $_POST["cantnodo"];
+if ($n != NULL){
+    
+    $fi=fopen("archivo.txt", "a");
+    //or die("problemas al crear archivo.txt");
+     fwrite($fi, "Datos: ");
+     fwrite($fi, "\n");
+     fwrite($fi, $_POST['cantnodo']);
+     fwrite($fi, "\n");
+     fwrite($fi,"-------------------- \n\n");
+     fclose($fi);
+    echo"Datos guardados";
+   }
+
 else {
-    echo "Datos incompletos, vuelva y rellene ambas casillas";
+    echo "Dato incompleto, vuelva y rellene la casilla";
 }
 
 
 ?>
 
-<form action ="./index.php"method ="post" >
+
+ <form action ="./index.php"method ="post" >
 <div style="text-align: center;">
  <input type ="submit" value = "Volver" style='width:70px; height:40px' class= "btn btn-outline-success mt-3 mb-3"/>
         </form>
         </div>
 
-
+        
+<!--<form action ="./grafo.php"method ="post" >
+<div style="text-align: center;">
+ <input type ="submit" value = "Siguiente" style='width:70px; height:40px' class= "btn btn-outline-success mt-3 mb-3"/>
+        </form>
+        </div>
+-->
+       
+       
+       
 
 
