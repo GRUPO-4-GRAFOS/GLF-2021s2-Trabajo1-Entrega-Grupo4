@@ -1,20 +1,17 @@
 <?php
-$num = $_POST["cantnodo"];
+$n = $_POST["cantnodo"];
 $a = $_POST["tipografo"];
 date_default_timezone_set("America/Santiago");
 $fechaActual = date ( 'd-m-Y H:i:s' );
-if ($num != NULL){
+if ($n != NULL){
     
     $fi=fopen("archivo.log", "a");
     //or die("problemas al crear archivo.txt");
-     fwrite($fi, "[grafo.php](");
+
      fwrite($fi, $fechaActual);
-     fwrite($fi, ")El usuario ha seleccionado la cantidad de nodos: ");
-     fwrite($fi, $num);
-     fwrite($fi, "\n");
-     fwrite($fi, "[grafo.php](");
-     fwrite($fi, $fechaActual); 
-     fwrite($fi, ")El usuario ha seleccionado el tipo de grafo: ");
+     fwrite($fi, "   [grafo.php]El usuario ha seleccionado la cantidad de nodos: ");
+     fwrite($fi, $n);
+     fwrite($fi, ", El usuario ha seleccionado el tipo de grafo: ");
      fwrite($fi,$a);
      fwrite($fi, "\n");
      fclose($fi);
@@ -22,33 +19,8 @@ if ($num != NULL){
 
 else {
     echo "Datos incompletos o no seleccionados, vuelva y rellene la casilla";
-    fwrite($fi, "[grafo.php](");
-    fwrite($fi, $fechaActual);
-    fwrite($fi, ") Uno o mas campos se dejaron sin rellenar.");
-    fwrite($fi, "\n");
-    fclose($fi);
 }
 
-if ($num != NULL && $a != NULL){
-    
-    $fi=fopen("graph_dataset.txt", "a");
-    //or die("problemas al crear archivo.txt");
-
-     fwrite($fi, "Cantidad de nodos: ");
-     fwrite($fi, "\n");
-     fwrite($fi, $num);
-     fwrite($fi, "\n");
-     fwrite($fi, "Tipo de grafo: ");
-     fwrite($fi, "\n");
-     fwrite($fi, $a);
-     fwrite($fi, "\n");
-     fclose($fi);
-
-}
-
-$archivo=file("graph_dataset.txt");
-$n = intval($archivo[1]);
-echo $n;
 
 ?>
 
@@ -73,33 +45,15 @@ echo $n;
 
 <table>
 
-<?php       
-        $cont = 0;
-        for($i = 0; $i <= $n; $i++){
+    <?php
+        for($i = 0; $i < $n; $i++){
             ?>
             <tr>
             <?php
-            for($j = 0; $j <= $n; $j++){
+            for($j = 0; $j < $n; $j++){
                 ?>
                     <td>
-                        <?php
-                            if($i == 0){
-                                    echo $cont;
-                                    $cont++;
-                            }else{
-                                if($cont == $n+1){
-                                    $cont = 1;
-                                }
-                                if($j == 0){
-                                    echo $cont;
-                                    $cont++;
-                                }
-                            }
-
-                            if($i != 0 && $j != 0){
-                                echo 0;
-                            }
-                        ?> <!-- aca va el dato que se escribe dentro de cada cuadrito de la matriz -->
+                        <?php echo $i ?> <!-- aca va el dato que se escribe dentro de cada cuadrito de la matriz -->
                     </td>
                 <?php
             }
@@ -107,15 +61,7 @@ echo $n;
             </tr>
             <?php
         }
-
-    $arch="";
-    // variable $arc está vacia
-    $arch = fopen ("graph_dataset.txt", "w+");   
-    fwrite($arch, "");
-    fclose($arch);
-
     ?>
-
     
     <!-- <tr>
         <td>E</td>
