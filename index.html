@@ -40,7 +40,7 @@
           <div id="container"></div>
         </div>
         <div class="col-4">
-          <form class="mt-4">
+          <form class="mt-4" action="post.php">
             <input
               placeholder="Ingresar Nodo"
               class="form-control"
@@ -48,7 +48,7 @@
               id="inputNodo"
             />
             <input
-              type="submit"
+              type="button"
               class="btn btn-success mt-3 mb-3"
               value="Agregar"
               id="form-nodo"
@@ -66,17 +66,20 @@
               id="nodoFin"
             />
             <input
-              type="submit"
+              type="button"
               class="btn btn-success mt-3 mb-3"
               value="agregar"
               id="form-arista"
             />
+            <button class="btn btn-danger" id="peticion">
+              Peticion
+            </button>
           </form>
         </div>
       </div>
     </div>
 
     <script src="./js/vis.min.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
