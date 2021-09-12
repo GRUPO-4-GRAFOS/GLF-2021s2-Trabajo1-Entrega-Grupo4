@@ -1,6 +1,13 @@
 <?php
-$num = $_POST["cantnodo"];
-$a = $_POST["tipografo"];
+$num = 0;
+$archivo = file("graph_dataset.txt");
+$n = intval($archivo);
+
+if(intval($archivo) == 0){
+    $num = $_POST["cantnodo"];
+    $a = $_POST["tipografo"]; 
+}
+
 date_default_timezone_set("America/Santiago");
 $fechaActual = date ( 'd-m-Y H:i:s' );
 if ($num != NULL){
@@ -18,15 +25,6 @@ if ($num != NULL){
      fwrite($fi,$a);
      fwrite($fi, "\n");
      fclose($fi);
-   }
-
-else {
-    echo "Datos incompletos o no seleccionados, vuelva y rellene la casilla";
-    fwrite($fi, "[grafo.php](");
-    fwrite($fi, $fechaActual);
-    fwrite($fi, ") Uno o mas campos se dejaron sin rellenar.");
-    fwrite($fi, "\n");
-    fclose($fi);
 }
 
 if ($num != NULL && $a != NULL){
@@ -47,8 +45,10 @@ if ($num != NULL && $a != NULL){
 }
 
 $archivo=file("graph_dataset.txt");
-$n = intval($archivo[1]);
-echo $n;
+if(intval($archivo) != 0){
+    $n = intval($archivo[1]);
+    echo $n;
+}
 
 ?>
 
@@ -107,35 +107,7 @@ echo $n;
             </tr>
             <?php
         }
-
-    $arch="";
-    // variable $arc está vacia
-    $arch = fopen ("graph_dataset.txt", "w+");   
-    fwrite($arch, "");
-    fclose($arch);
-
     ?>
-
-    
-    <!-- <tr>
-        <td>E</td>
-        <td><?php/*
-        $bin1 = $_POST['Conectado'] - 1;
-        $bin2 = $_POST ['Conectado1'] - 1 ; 
-        $Matriz = array (Array (0,0,0,0,0), Array (0,0,0,0,0), Array (0,0,0,0,0) , Array (0,0,0,0,0) , Array (0,0,0,0,0));
-        $Matriz[$bin1][$bin2]  = 1;
-        $i=4;
-            for($j= 0; $j <5; $j++){
-                echo " " .$Matriz[$i][$j];
-            }   
-        */?> </td>
-    </tr>
 </table>
 </body>
 </html>
-
-<form action ="./arbol.php"method ="post" >
-<div style="text-align: center;">
- <input type ="submit" value = "arbol" style='width:70px; height:40px' class= "btn btn-outline-success mt-3 mb-3"/>
-        </form>
-        </div>

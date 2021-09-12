@@ -1,17 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-
 <body>
-
-<?php 
- $arch="";
- // variable $arc está vacia
- $arch = fopen ("graph_dataset.txt", "w+");   
- fwrite($arch, "");
- fclose($arch);
-
-?>
 
 <head>
     <meta charset="UTF-8">
@@ -37,7 +27,7 @@
                         <legend>Crear Grafo</legend>
 
                         <label class="form-label">Ingrese cantidad de nodos</label>
-                        <input type="number" name ="cantnodo" class="form-control" min="1" max="10" /></input>
+                        <input type="number" name ="cantnodo" class="form-control" min="1" max="10" require /></input>
                         <label class="form-label">Elija el tipo de grafo</label>
                         <select class="form-select" name="tipografo">
                             <option>simple</option>
