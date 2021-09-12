@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="es">
 
-
 <body>
 
 <head>
@@ -29,7 +28,7 @@
                         <legend>Crear Grafo</legend>
 
                         <label class="form-label">Ingrese cantidad de nodos</label>
-                        <input type="number" name ="cantnodo" class="form-control" min="1" max="10" /></input>
+                        <input type="number" name ="cantnodo" class="form-control" min="1" max="10" require /></input>
                         <label class="form-label">Elija el tipo de grafo</label>
                         <select class="form-select" name="tipografo">
                             <option>simple</option>
