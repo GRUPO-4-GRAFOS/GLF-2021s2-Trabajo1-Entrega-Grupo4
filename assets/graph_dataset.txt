@@ -1,4 +1,4 @@
 Cantidad de nodos: 
-5
+10
 Tipo de grafo: 
 simple

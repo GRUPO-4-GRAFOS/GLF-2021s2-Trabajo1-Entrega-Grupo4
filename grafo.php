@@ -55,9 +55,13 @@
       integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
       crossorigin="anonymous"
     >
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Trabajo 1</title>
   </head>
   <body>
+  <div class="titulo">
+          <h1>Trabajo N°1 Grafo</h1>
+    </div>
     <div class="container mt-5">
       <div class="row">
         <div class="col-sm-6">
