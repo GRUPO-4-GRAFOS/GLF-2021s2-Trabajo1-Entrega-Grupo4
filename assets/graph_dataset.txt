@@ -1,4 +1,27 @@
-Cantidad de nodos: 
-10
-Tipo de grafo: 
-simple
+Cantidad de nodos:
+3
+Tipo:
+simpleCantidad de nodos:
+3
+Tipo:
+Cantidad de nodos:
+3
+Tipo:
+Cantidad de nodos:
+6
+Tipo:
+simpleCantidad de nodos:
+3
+Tipo:
+Cantidad de nodos:
+3
+Tipo:
+Cantidad de nodos:
+3
+Tipo:
+simpleCantidad de nodos:
+3
+Tipo:
+Cantidad de nodos:
+3
+Tipo:

@@ -1,40 +1,79 @@
 <?php
+  function implodeArrayofArrays($array, $glue  = ', ') {
+    $output = '';
+    foreach ($array as $subarray) {
+        $output .= implode('-', $subarray);
+    }
+    return $output;
+  }
+
+  error_reporting(E_ALL ^ E_NOTICE);
+
   include './models/log.php';
 
-  $num = 0;
-  $archivo = file("./assets/graph_dataset.txt");
-  $n = intval($archivo);
+  $nodoss = "./assets/graph_dataset.txt"; 
+  $matrizz = "./assets/matriz_dataset.txt"; 
 
-  if(intval($archivo) == 0){
-    $num = $_POST["cantnodo"];
-    $tipoGafo = $_POST["tipografo"]; 
+  $ini = 0;
+  $ter = 0;
+  $num = 0;
+
+  $ini = $_POST["inicio_arista"];
+  $ter = $_POST["termino_arista"];
+
+  if($ini == NULL || $ter == NULL){
+    $ini = 0;
+    $ter = 0;
   }
+
+  if($num == 0){
+    $num = $_POST["cantnodo"];
+    $tipoGrafo = $_POST["tipografo"];
+  }
+
+  $archivo = file($nodoss);
+
+  if($num == 0){
+    $num = intval($archivo[1]);
+  }
+
+  $fp = fopen($nodoss, "a");
+  fwrite($fp, "Cantidad de nodos:");
+  fwrite($fp, "\n");
+  fwrite($fp, $num);
+  fwrite($fp, "\n");
+  fwrite($fp, "Tipo:");
+  fwrite($fp, "\n");
+  fwrite($fp, $tipoGrafo);
+  fclose($fp);
 
   if ($num != NULL){
     $log = new Log('./log/archivo.log');
-    $log->writeline('Error', "[grafo.php]El usuario ha seleccionado la cantidad de nodos: $num ");
-    $log->writeline('Info', "[grafo.php]El usuario ha seleccionado el tipo de grafo: $tipoGafo \n");
+    $log->writeline('Info', "[grafo.php]El usuario ha seleccionado la cantidad de nodos: $num ");
+    $log->writeline('Info', "[grafo.php]El usuario ha seleccionado el tipo de grafo: $tipoGrafo \n");
     $log->close();
   }
 
-  if ($num != NULL && $tipoGafo != NULL){      
-    $fi=fopen("./assets/graph_dataset.txt", "a");
-    fwrite($fi, "Cantidad de nodos: ");
-    fwrite($fi, "\n");
-    fwrite($fi, $num);
-    fwrite($fi, "\n");
-    fwrite($fi, "Tipo de grafo: ");
-    fwrite($fi, "\n");
-    fwrite($fi, $tipoGafo);
-    fwrite($fi, "\n");
-    fclose($fi);
+  for($i = 0; $i <= 0; $i++){
+    for($j = 0; $j <= 0; $j++){
+      $matriz[$i][$j] = 0;
+    }
   }
 
-  $archivo=file("./assets/graph_dataset.txt");
+  if($ini != 0 && $ter != 0){
 
-  if(intval($archivo) != 0){
-    $n = intval($archivo[1]);
+    echo implodeArrayofArrays($matriz);
+
+    $ff = fopen($matrizz, "a");
+    fwrite($ff,implodeArrayofArrays($matriz));
+
+    $matriz[$ini][$ter] = 1;
+    $matriz[$ter][$ini] = 1;
+
   }
+
+  $n = $num;
+
 ?>
 
 <!DOCTYPE html>
@@ -65,22 +104,22 @@
     <div class="container mt-5">
       <div class="row">
         <div class="col-sm-6">
-          <form action="matriz.php" method="post">
+          <form action="grafo.php" method="post">
             Nodo:
             <input 
               type="number" 
-              name="Conectado" 
+              name="inicio_arista" 
               class="form-control" 
               min="0" 
-              max="7" 
+              max="10" 
             />
             Conecta con:
             <input 
               type="number" 
-              name="Conectado1" 
+              name="termino_arista" 
               class="form-control" 
               min="0" 
-              max="7"
+              max="10"
             />
             <input 
               type="submit" 
@@ -110,7 +149,11 @@
                     }
                   }
                   if($i != 0 && $j != 0){
-                    echo 0;
+                    if($matriz[$i][$j] == NULL){
+                      echo 0;
+                    }else{
+                      echo $matriz[$i][$j];
+                    }
                   }        
                   echo '</td>';
                 } 
