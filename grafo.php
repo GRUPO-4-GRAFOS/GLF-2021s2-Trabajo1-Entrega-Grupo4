@@ -48,9 +48,9 @@
   fclose($fp);
 
   if ($num != NULL){
-    $log = new Log('./log/archivo.log');
+    $log = new Log('./log/loginfo.log');
     $log->writeline('Info', "[grafo.php]El usuario ha seleccionado la cantidad de nodos: $num ");
-    $log->writeline('Info', "[grafo.php]El usuario ha seleccionado el tipo de grafo: $tipoGrafo \n");
+    $log->writeline('Info', "[grafo.php]El usuario ha seleccionado el tipo de grafo: $tipoGafo \n");
     $log->close();
   }
 
@@ -130,7 +130,12 @@
         </div>
         <div class="col-sm-6">
           <table class="table table-primary">
-            <?php       
+           
+           
+           
+           
+           
+           <?php       
               $cont = 0;
               for($i = 0; $i <= $n; $i++){
                 echo'<tr>';

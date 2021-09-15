@@ -17,13 +17,26 @@
       <div class="row">
       <div class="col-sm-6 my-5">
         <ul class="list-group">
+        <li class="list-group-item"><FONT COLOR="blue"><center>Desarrolladores:  </center></FONT></li> 
           <li class="list-group-item">Lucas Castillo</li> 
           <li class="list-group-item">Nicolas Garay</li> 
           <li class="list-group-item">Rocio Leiva</li> 
           <li class="list-group-item">Paula Ruiz</li> 
           <li class="list-group-item">Víctor Venegas</li> 
         </ul>
-        <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut unde dignissimos aliquam labore dolorem mollitia praesentium voluptas iure velit dolores animi consequatur, nisi sit reprehenderit, beatae fuga dicta dolore aliquid.</p>
+
+        
+        <p class="mt-3">
+        <ul class="list-group">
+          <li class="list-group-item "><FONT COLOR="blue"><center>Descripcion de la App web:  </center></FONT></li> 
+          <li class="list-group-item">a) Mostrar la matriz de caminos e indicara si el grafo es o no conexo</li> 
+          <li class="list-group-item">b)Mostrar el camino más corto para dos nodos a elección del usuario, mostrando la duración y la ruta de dicho camino</li> 
+          <li class="list-group-item">c)Indicar si es hamiltoniano y/o euleriano, indicando el camino hamiltoniano (camino elemental que pasa por todos los vértices del grafo) y/o euleriano (camino simple que contiene todas las aristas del grafo) que lo define como tal</li> 
+          <li class="list-group-item">d)Indicar el flujo máximo para un nodo de origen/entrada y otro de destino/salida a elección del usuario</li> 
+          <li class="list-group-item">e)Obtener el árbol generador mínimo mediante prim o kruskal</li> 
+          
+        </ul>
+         </p>
       </div>
       <div class="col-sm-6 text-center">
         <form action="./grafo.php" method="post">
