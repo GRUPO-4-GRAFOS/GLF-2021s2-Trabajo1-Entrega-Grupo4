@@ -75,8 +75,30 @@
 </html>
 
 <?php 
+  function conexo($matrix){
+    $desc = 0;
+    if($matrix[1][2] == 0 && $matrix[2][1] == 0){
+      $desc++;
+    }
+    if($matrix[2][3] == 0 && $matrix[3][2] == 0){
+     $desc++;
+    }
+    if($matrix[3][1] == 0 && $matrix[1][3] == 0){
+     $desc++;
+    }
+    if($desc >= 2){
+      return 'No es conexo';
+    }
+    else{
+      return 'es conexo';
+    }
+  }
+?>
+
+<?php 
+  $esono = conexo($matriz);
+  echo $esono;
   //TODA OPERATORIA CON LA MATRIZ HECHA CON LOS DATOS YA EXISTENTES SE HACE ACA
-  //-VER SI ES CONEXO
   //-VER SI ES EULERIANO
   //-VER SI ES HAMILTONIANO
   //-ARBOL GENERADOR MINIMO
