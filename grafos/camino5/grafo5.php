@@ -61,9 +61,10 @@ error_reporting(0);
 </head>
 <body>
 <form method="post" action="grafo.php">
-<table width="115" border="0"> 
+<table width="115" border="0" summary="Grafo 5"> 
+    <caption>ESCRIBIR PESO DE CONEXION</caption>
     <tr>
-        <td colspan="6" style="text-align: center;" ><strong >ESCRIBIR PESO DE CONEXION</td>
+        <th class="text-center" scope="col" colspan="6">ESCRIBIR PESO DE CONEXION</th>
     </tr>
     <tr>
         <td>  </td>

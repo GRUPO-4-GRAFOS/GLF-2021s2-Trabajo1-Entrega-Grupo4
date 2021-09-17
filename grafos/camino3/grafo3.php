@@ -9,173 +9,143 @@
     <link rel="stylesheet" href="../../css/styles.css">
     <title>Trabajo 1</title>
   </head>
+  <style>
+    table, tr, td{ 
+      border: 1px solid;
+    }
+  </style>
   <body>
     <div class="titulo">
-          <h1>Trabajo N°1 Grafo</h1>
+      <h1>Trabajo N°1 Grafo</h1>
     </div>
-
-     
-
-
-  <?php
-
-error_reporting(0);
-    $s=0; $i=0; $j=0;
-    $n=array();
-    $bin= array();
-    if(isset($_POST ["MatrizNodo"])){
+    <?php
+      error_reporting(0);
+      $s=0; $i=0; $j=0;
+      $n=array();
+      $bin= array();
+      if(isset($_POST ["MatrizNodo"])){
         $n[0][0]= (int)$_POST ["txtn00"];
         $n[0][1]= (int)$_POST ["txtn01"];
         $n[0][2]= (int)$_POST ["txtn02"];
-      
-
+    
         $n[1][0]= (int)$_POST ["txtn10"];
         $n[1][1]= (int)$_POST ["txtn11"];
         $n[1][2]= (int)$_POST ["txtn12"];
 
-
         $n[2][0]= (int)$_POST ["txtn20"];
         $n[2][1]= (int)$_POST ["txtn21"];
         $n[2][2]= (int)$_POST ["txtn22"];
-
-
-    }
-    for($i=0; $i<3; $i++){
-        for($j=0; $j<3; $j++){
-            $bin[$i][$j]=$n[$i][$j];
-        }
-    }
-?>
-
-    <style>
-        table, tr, td{ 
-            border: 1px solid;
-        }
-    </style>
-
-<form method="post" action="./grafo3.php">
-<table width="115" border="0"> 
-    <tr>
-        <td colspan="4" style="text-align: center;" ><strong >ESCRIBIR PESO DE CONEXION</td>
-    </tr>
-    <tr>
-        <td>  </td>
-        <td> A </td>
-        <td> B </td>
-        <td> C </td>
-        
-    </tr>
-    <tr>
-        <td width="43"> A </td>
-        <td width="43"><input name="txtn00" type="text" id="txtn00"
-        value="<?= 0?>" size = "3"readonly/> </td>
-        <td width="62"><input name="txtn01" type="text" id="txtn01"
-        value="<?= $n[0][1]?>" size = "3"/> </td>
-        <td width="62"><input name="txtn02" type="text" id="txtn02"
-        value="<?= $n[0][2]?>" size = "3"/> </td>
-   
-
-    </tr>
-    <tr>
-        <td width="43"> B </td>
-        <td width="43"><input name="txtn10" type="text" id="txtn10"
-        value="<?= $n[1][0]?>" size = "3"/> </td>
-        <td width="62"><input name="txtn11" type="text" id="txtn11"
-        value="<?= 0?>" size = "3"readonly/> </td>
-        <td width="62"><input name="txtn12" type="text" id="txtn12"
-        value="<?= $n[1][2]?>" size = "3"/> </td>
-        
-
-    </tr>
-    <tr>
-        <td width="43"> C </td>
-        <td width="43"><input name="txtn20" type="text" id="txtn20"
-        value="<?= $n[2][0]?>" size = "3"/> </td>
-        <td width="62"><input name="txtn21" type="text" id="txtn21"
-        value="<?= $n[2][1]?>" size = "3"/> </td>
-        <td width="62"><input name="txtn22" type="text" id="txtn22"
-        value="<?= 0?>" size = "3"readonly/> </td>
-    </tr>
-    <tr></tr>
-    <tr>
-        <td>
-            <input name= "MatrizNodo" type="submit" id="MatrizNodo" value="Mostrar"/></td>
-        </td>
-    </tr>
-</table>
-<?php
+      }
       for($i=0; $i<3; $i++){
         for($j=0; $j<3; $j++){
-            if($bin[$i][$j]>0){
-                $bin[$i][$j]=1;
-            }
+          $bin[$i][$j]=$n[$i][$j];
         }
-    }
-?>
-<table width="115" border="0"> 
-    <tr>
-        <td colspan="4" style="text-align: center;" ><strong >Matriz De Adyacencia</td>
-    </tr>   
-    <tr>
+      }
+    ?>
+    <form method="post" action="./grafo3.php">
+      <table width="115" border="0"> 
+        <caption>ESCRIBIR PESO DE CONEXION</caption>
+        <tr>
+          <th colspan="4" class="text-center" scope="col">ESCRIBIR PESO DE CONEXION</th>
+        </tr>
+        <tr>
+          <td>  </td>
+          <td> A </td>
+          <td> B </td>
+          <td> C </td>  
+        </tr>
+        <tr>
+          <td width="43"> A </td>
+          <td width="43">
+            <input name="txtn00" type="text" id="txtn00"value="<?= 0?>" size = "3"readonly/> 
+          </td>
+          <td width="62">
+            <input name="txtn01" type="text" id="txtn01"value="<?= $n[0][1]?>" size = "3"/> 
+          </td>
+          <td width="62">
+            <input name="txtn02" type="text" id="txtn02" value="<?= $n[0][2]?>" size = "3"/> 
+          </td>
+        </tr>
+        <tr>
+          <td width="43"> B </td>
+          <td width="43">
+            <input name="txtn10" type="text" id="txtn10" value="<?= $n[1][0]?>" size = "3"/> 
+          </td>
+          <td width="62">
+            <input name="txtn11" type="text" id="txtn11" value="<?= 0?>" size = "3"readonly/>
+          </td>
+          <td width="62">
+            <input name="txtn12" type="text" id="txtn12" value="<?= $n[1][2]?>" size = "3"/> 
+          </td>
+        </tr>
+        <tr>
+          <td width="43"> C </td>
+          <td width="43">
+            <input name="txtn20" type="text" id="txtn20" value="<?= $n[2][0]?>" size = "3"/> 
+          </td>
+          <td width="62">
+            <input name="txtn21" type="text" id="txtn21" value="<?= $n[2][1]?>" size = "3"/> 
+          </td>
+          <td width="62">
+            <input name="txtn22" type="text" id="txtn22" value="<?= 0?>" size = "3"readonly/> 
+          </td>
+        </tr>
+        <tr></tr>
+        <tr>
+          <td>
+            <input name= "MatrizNodo" type="submit" id="MatrizNodo" value="Mostrar"/></td>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <?php
+      for($i=0; $i<3; $i++){
+        for($j=0; $j<3; $j++){
+          if($bin[$i][$j]>0){
+            $bin[$i][$j]=1;
+          }
+        }
+      }
+    ?>
+    <table width="115" border="0"> 
+      <caption>Matriz De Adyacencia</caption>
+      <tr>
+        <th colspan="4" scope="col" class="text-center">Matriz De Adyacencia</th>
+      </tr>   
+      <tr>
         <td>  </td>
         <td> A </td>
         <td> B </td>
         <td> C </td>
-       
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td width="43"> A </td>
         <td><?php echo $bin[0][0];?></td>
         <td><?php echo $bin[0][1];?></td>
         <td><?php echo $bin[0][2];?></td>
-        
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td width="43"> B </td>
         <td><?php echo $bin[1][0];?></td>
         <td><?php echo $bin[1][1];?></td>
         <td><?php echo $bin[1][2];?></td>
-        
-
-    </tr>
-    <tr>
+      </tr>
+      <tr>
         <td width="43"> C </td>
         <td><?php echo $bin[2][0];?></td>
         <td><?php echo $bin[2][1];?></td>
         <td><?php echo $bin[2][2];?></td>
-       
-    </tr>
-
-    
-</form>
-
-<form action="../../index.php" method="post">
-          <fieldset>
-              <button type="submit" class="btn btn-outline-success mt-3 mb-3">volver</button>
-          </fieldset>
-</form>
-<form action="../../conexo/conexo.php" method="post">
-          <fieldset>
-              <button type="submit" class="btn btn-outline-success mt-3 mb-3">Conexo?</button>
-          </fieldset>
-</form>
-
-        </body>
+      </tr>
+    </table>
+    <form action="../../index.php" method="post">
+      <fieldset>
+        <button type="submit" class="btn btn-outline-success mt-3 mb-3">volver</button>
+      </fieldset>
+    </form>
+    <form action="../../conexo/conexo.php" method="post">
+      <fieldset>
+        <button type="submit" class="btn btn-outline-success mt-3 mb-3">Conexo?</button>
+      </fieldset>
+    </form>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  

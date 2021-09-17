@@ -47,8 +47,9 @@ error_reporting(0);
 <body>
 <form method="post" action="grafo.php">
 <table width="115" border="0"> 
+    <caption>ESCRIBIR PESO DE CONEXION</caption>
     <tr>
-        <td colspan="5" style="text-align: center;" ><strong >ESCRIBIR PESO DE CONEXION</td>
+        <th colspan="5"class="text-center" scope="col">ESCRIBIR PESO DE CONEXION</th>
     </tr>
     <tr>
         <td>  </td>
@@ -125,8 +126,9 @@ error_reporting(0);
     }
 ?>
 <table width="115" border="0"> 
+<caption>Matriz De Adyacencia</caption>
     <tr>
-        <td colspan="5" style="text-align: center;" ><strong >Matriz De Adyacencia</td>
+        <th colspan="5" scope="col">Matriz De Adyacencia</th>
     </tr>   
     <tr>
         <td>  </td>
