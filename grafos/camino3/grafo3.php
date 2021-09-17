@@ -138,14 +138,10 @@
       </tr>
     </table>
     <form action="../../index.php" method="post">
-      <fieldset>
-        <button type="submit" class="btn btn-outline-success mt-3 mb-3">volver</button>
-      </fieldset>
+      <button type="submit" class="btn btn-outline-success mt-3 mb-3">volver</button>
     </form>
     <form action="../../conexo/conexo.php" method="post">
-      <fieldset>
-        <button type="submit" class="btn btn-outline-success mt-3 mb-3">Conexo?</button>
-      </fieldset>
+      <button type="submit" class="btn btn-outline-success mt-3 mb-3">Conexo?</button>
     </form>
   </body>
 </html>
