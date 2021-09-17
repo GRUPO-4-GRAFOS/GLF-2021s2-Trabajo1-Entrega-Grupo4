@@ -59,5 +59,6 @@
           </fieldset>
         </form>
     </div>
+    <img src=".\imagen\e86e39f5a0598728dd6967b57c9c8faf.jpg" >
   </body>
 </html>
