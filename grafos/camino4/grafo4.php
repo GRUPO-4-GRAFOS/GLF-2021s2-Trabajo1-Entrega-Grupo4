@@ -1,3 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta 
+      http-equiv="X-UA-Compatible" 
+      content="IE=edge"
+    >
+    <meta 
+      name="viewport" 
+      content="width=device-width, initial-scale=1.0"
+    >
+    <link 
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
+      crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Trabajo 1</title>
+  </head>
+  <body>
+  </body>
+</html>
 <?php
 error_reporting(0);
     $s=0; $i=0; $j=0;
@@ -32,12 +56,25 @@ error_reporting(0);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="es">
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta 
+      http-equiv="X-UA-Compatible" 
+      content="IE=edge"
+    >
+    <meta 
+      name="viewport" 
+      content="width=device-width, initial-scale=1.0"
+    >
+    <link 
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
+      crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Trabajo 1</title>
     <style>
         table, tr, td{ 
             border: 1px solid;

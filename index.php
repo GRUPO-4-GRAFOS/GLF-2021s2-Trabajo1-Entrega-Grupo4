@@ -39,22 +39,25 @@
          </p>
       </div>
       <div class="col-sm-6 text-center">
-        <form action="./grafo.php" method="post">
+        <form action="./grafos/camino3/grafo3.php" method="post">
           <fieldset>
-            <legend>Crear Grafo</legend>
-              <label class="form-label">Ingrese cantidad de nodos</label>
-              <input type="number" name="cantnodo" class="form-control" min="1" max="10" require /></input>
-              <label class="form-label">Elija el tipo de grafo</label>
-              <select class="form-select" name="tipografo">
-                <option>simple</option>
-                <option>dirigido</option>
-                <option>etiquetado</option>
-              </select>
-              <button type="submit" class="btn btn-outline-success mt-3 mb-3">Crear Grafo</button>
+            <legend><h2>Crear Grafo</h2></legend>
+              <div class="Titulo">
+                <label class="form-label"><FONT COLOR="red"><h4>Seleccione la cantidad de nodos</h4></FONT></label>
+              </div>
+              <button type="submit" class="btn btn-outline-success mt-3 mb-3">3 Nodos</button>
           </fieldset>
         </form>
-      </div>
-      </div>
+        <form action="./grafos/camino4/grafo4.php" method="post">
+          <fieldset>
+              <button type="submit" class="btn btn-outline-success mt-3 mb-3">4 Nodos</button>
+          </fieldset>
+        </form>
+        <form action="./grafos/camino5/grafo5.php" method="post">
+          <fieldset>
+              <button type="submit" class="btn btn-outline-success mt-3 mb-3">5 Nodos</button>
+          </fieldset>
+        </form>
     </div>
   </body>
 </html>
