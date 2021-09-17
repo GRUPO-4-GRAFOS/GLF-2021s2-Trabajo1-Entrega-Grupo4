@@ -26,20 +26,18 @@
 
     foreach ($nodesInTree as $node) {
       foreach ($adjacentList[$node] as $key => $value) {
-        if (in_array($key, $nodesNotInTree)) {
-          if ($value < $minCost) {
+        if (in_array($key, $nodesNotInTree) && $value < $minCost) {
             $nextNode = $key;
             $minCost = $value;
             $edge = $node.'-'.$key;
-          }
         }
       }
     }
 
     echo 'IN '.implode(',', $nodesInTree) .' NOT IN '.implode(',', $nodesNotInTree).' NEXT EDGE TO ADD '.$edge.'('.$minCost.')'.PHP_EOL;
     echo '<br>';
-
-    return $nextNode;    
+   
+    return $nextNode;
   }
 
   function fillRandomCosts(&$adjacentList){
@@ -48,7 +46,7 @@
       while (!$added) {
         for ($j = 0; $j < NUMBER_OF_EDGES_PER_NODE; ++$j) {
           $adjacentNode = rand(0, NUMBER_OF_NODES - 1);
-            if ($adjacentNode != $i and $adjacentNode != $j) {
+            if ($adjacentNode != $i && $adjacentNode != $j) {
               $adjacentNodeCost = rand(1, 5);
               $adjacentList[$i][$adjacentNode] = $adjacentNodeCost;
               $adjacentList[$adjacentNode][$i] = $adjacentNodeCost;
@@ -71,8 +69,8 @@
   }
 ?>
 
-<form action ="./index.php"method ="post" >
-  <div style="text-align: center;">
-   <input type ="submit" value = "Volver" style='width:70px; height:40px' class= "btn btn-outline-success mt-3 mb-3"/>
-  </div>
+<form action="./index.php" method="post">
+    <div style="text-align: center;">
+        <input type="submit" value="Volver" style='width:70px; height:40px' class="btn btn-outline-success mt-3 mb-3" />
+    </div>
 </form>

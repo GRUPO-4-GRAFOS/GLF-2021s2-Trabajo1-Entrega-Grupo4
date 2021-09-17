@@ -43,7 +43,7 @@
       }
     ?>
     <form method="post" action="./grafo3.php">
-      <table width="115" border="0"> 
+      <table border="0"> 
         <caption>ESCRIBIR PESO DE CONEXION</caption>
         <tr>
           <th colspan="4" class="text-center" scope="col">ESCRIBIR PESO DE CONEXION</th>
@@ -55,38 +55,38 @@
           <td> C </td>  
         </tr>
         <tr>
-          <td width="43"> A </td>
-          <td width="43">
+          <td> A </td>
+          <td>
             <input name="txtn00" type="text" id="txtn00"value="<?= 0?>" size = "3"readonly/> 
           </td>
-          <td width="62">
+          <td>
             <input name="txtn01" type="text" id="txtn01"value="<?= $n[0][1]?>" size = "3"/> 
           </td>
-          <td width="62">
+          <td>
             <input name="txtn02" type="text" id="txtn02" value="<?= $n[0][2]?>" size = "3"/> 
           </td>
         </tr>
         <tr>
-          <td width="43"> B </td>
-          <td width="43">
+          <td> B </td>
+          <td>
             <input name="txtn10" type="text" id="txtn10" value="<?= $n[1][0]?>" size = "3"/> 
           </td>
-          <td width="62">
+          <td>
             <input name="txtn11" type="text" id="txtn11" value="<?= 0?>" size = "3"readonly/>
           </td>
-          <td width="62">
+          <td>
             <input name="txtn12" type="text" id="txtn12" value="<?= $n[1][2]?>" size = "3"/> 
           </td>
         </tr>
         <tr>
-          <td width="43"> C </td>
-          <td width="43">
+          <td> C </td>
+          <td>
             <input name="txtn20" type="text" id="txtn20" value="<?= $n[2][0]?>" size = "3"/> 
           </td>
-          <td width="62">
+          <td>
             <input name="txtn21" type="text" id="txtn21" value="<?= $n[2][1]?>" size = "3"/> 
           </td>
-          <td width="62">
+          <td>
             <input name="txtn22" type="text" id="txtn22" value="<?= 0?>" size = "3"readonly/> 
           </td>
         </tr>
@@ -107,7 +107,7 @@
         }
       }
     ?>
-    <table width="115" border="0"> 
+    <table border="0"> 
       <caption>Matriz De Adyacencia</caption>
       <tr>
         <th colspan="4" scope="col" class="text-center">Matriz De Adyacencia</th>
@@ -119,19 +119,19 @@
         <td> C </td>
       </tr>
       <tr>
-        <td width="43"> A </td>
+        <td> A </td>
         <td><?php echo $bin[0][0];?></td>
         <td><?php echo $bin[0][1];?></td>
         <td><?php echo $bin[0][2];?></td>
       </tr>
       <tr>
-        <td width="43"> B </td>
+        <td> B </td>
         <td><?php echo $bin[1][0];?></td>
         <td><?php echo $bin[1][1];?></td>
         <td><?php echo $bin[1][2];?></td>
       </tr>
       <tr>
-        <td width="43"> C </td>
+        <td> C </td>
         <td><?php echo $bin[2][0];?></td>
         <td><?php echo $bin[2][1];?></td>
         <td><?php echo $bin[2][2];?></td>

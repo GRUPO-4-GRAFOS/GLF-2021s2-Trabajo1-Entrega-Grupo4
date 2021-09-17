@@ -74,6 +74,10 @@
       <div class="row">
         <div class="col-sm-6">
           <table class="table table-primary">
+            <caption>Matriz</caption>
+            <tr>
+              <th scope="col" class="text-center">Matriz</th>
+            </tr>
             <?php       
               $cont = 0;
               for($i = 0; $i <= 4; $i++){
@@ -95,7 +99,6 @@
 
 <?php 
   function conexo($matrix){
-    $desc = 0;
     $conti1 = 0;
     $conti2 = 0;
     for($i = 1; $i <= 4; $i++){
@@ -114,9 +117,7 @@
     }
     return 'Es Conexo';
   }
-?>
-
-<?php 
+  
   $esono = conexo($matriz);
   echo $esono;
   //TODA OPERATORIA CON LA MATRIZ HECHA CON LOS DATOS YA EXISTENTES SE HACE ACA
