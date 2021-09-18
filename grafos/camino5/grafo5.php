@@ -69,91 +69,91 @@
         <tr>
           <td> A </td>
           <td>
-            <input name="txtn00" type="text" id="txtn00"value="<?= 0?>" size = "5"readonly/> 
+            <input name="txtn00" type="number" id="txtn00"value="<?= 0?>" size = "5" readonly  min ="0" required/> 
           </td>
           <td>
-            <input name="txtn01" type="text" id="txtn01" value="<?= $n[0][1]?>" size = "5"/> 
+            <input name="txtn01" type="number" id="txtn01" value="<?= $n[0][1]?>" size = "5"  min ="0" required/> 
           </td>
           <td>
-            <input name="txtn02" type="text" id="txtn02" value="<?= $n[0][2]?>" size = "5"/> 
+            <input name="txtn02" type="number" id="txtn02" value="<?= $n[0][2]?>" size = "5"  min ="0" required/> 
           </td>
           <td>
-            <input name="txtn03" type="text" id="txtn03" value="<?= $n[0][3]?>" size = "5"/> 
+            <input name="txtn03" type="number" id="txtn03" value="<?= $n[0][3]?>" size = "5"  min ="0" required/> 
           </td>
           <td>
-            <input name="txtn04" type="text" id="txtn04" value="<?= $n[0][4]?>" size = "5"/> 
+            <input name="txtn04" type="number" id="txtn04" value="<?= $n[0][4]?>" size = "5"  min ="0" required/> 
           </td>
         </tr>
         <tr>
           <td> B </td>
           <td>
-            <input name="txtn10" type="text" id="txtn10" value="<?= $n[1][0]?>" size = "5"/>
+            <input name="txtn10" type="number" id="txtn10" value="<?= $n[1][0]?>" size = "5"  min ="0" required/>
           </td>
           <td>
-            <input name="txtn11" type="text" id="txtn11" value="<?= 0?>" size = "5"readonly/> 
+            <input name="txtn11" type="number" id="txtn11" value="<?= 0?>" size = "5" readonly  min ="0" required/> 
           </td>
           <td>
-            <input name="txtn12" type="text" id="txtn12" value="<?= $n[1][2]?>" size = "5"/> 
+            <input name="txtn12" type="number" id="txtn12" value="<?= $n[1][2]?>" size = "5"  min ="0" required/> 
           </td>
           <td>
-            <input name="txtn13" type="text" id="txtn13" value="<?= $n[1][3]?>" size = "5"/> 
+            <input name="txtn13" type="number" id="txtn13" value="<?= $n[1][3]?>" size = "5"  min ="0" required/> 
           </td>
           <td>
-            <input name="txtn14" type="text" id="txtn14" value="<?= $n[1][4]?>" size = "5"/> 
+            <input name="txtn14" type="number" id="txtn14" value="<?= $n[1][4]?>" size = "5"  min ="0" required/> 
           </td>
         </tr>
         <tr>
           <td> C </td>
           <td>
-            <input name="txtn20" type="text" id="txtn20"value="<?= $n[2][0]?>" size = "5"/>
+            <input name="txtn20" type="number" id="txtn20"value="<?= $n[2][0]?>" size = "5"  min ="0" required/>
           </td>
           <td>
-            <input name="txtn21" type="text" id="txtn21" value="<?= $n[2][1]?>" size = "5"/> 
+            <input name="txtn21" type="number" id="txtn21" value="<?= $n[2][1]?>" size = "5"  min ="0" required/> 
           </td>
           <td>
-            <input name="txtn22" type="text" id="txtn22"value="<?= 0?>" size = "5"readonly/>
+            <input name="txtn22" type="number" id="txtn22"value="<?= 0?>" size = "5" readonly  min ="0" required/>
           </td>
           <td>
-            <input name="txtn23" type="text" id="txtn23" value="<?= $n[2][3]?>" size = "5"/> 
+            <input name="txtn23" type="number" id="txtn23" value="<?= $n[2][3]?>" size = "5"  min ="0" required/> 
           </td>
           <td>
-            <input name="txtn24" type="text" id="txtn24" value="<?= $n[2][4]?>" size = "5"/> 
+            <input name="txtn24" type="number" id="txtn24" value="<?= $n[2][4]?>" size = "5"  min ="0" required/> 
           </td>
         </tr>
         <tr>
           <td> D </td>
           <td>
-            <input name="txtn30" type="text" id="txtn30" value="<?= $n[3][0]?>" size = "5"/> 
+            <input name="txtn30" type="number" id="txtn30" value="<?= $n[3][0]?>" size = "5"  min ="0" required/> 
           </td>
           <td>
-            <input name="txtn31" type="text" id="txtn31" value="<?= $n[3][1]?>" size = "5"/>
+            <input name="txtn31" type="number" id="txtn31" value="<?= $n[3][1]?>" size = "5" min ="0" required/>
           </td>
           <td>
-            <input name="txtn32" type="text" id="txtn32" value="<?= $n[3][2]?>" size = "5"/>
+            <input name="txtn32" type="number" id="txtn32" value="<?= $n[3][2]?>" size = "5" min ="0" required/>
           </td>
           <td>
-            <input name="txtn33" type="text" id="txtn33" value="<?= 0?>" size = "5"readonly/>
+            <input name="txtn33" type="number" id="txtn33" value="<?= 0?>" size = "5" readonly min ="0" required/>
           </td>
           <td>
-            <input name="txtn34" type="text" id="txtn34" value="<?= $n[3][4]?>" size = "5"/> 
+            <input name="txtn34" type="number" id="txtn34" value="<?= $n[3][4]?>" size = "5" min ="0" required/> 
           </td>
         </tr>
         <tr>
           <td> E </td>
           <td>
-            <input name="txtn40" type="text" id="txtn40" value="<?= $n[4][0]?>" size = "5"/> 
+            <input name="txtn40" type="number" id="txtn40" value="<?= $n[4][0]?>" size = "5" min ="0" required/> 
           </td>
           <td>
-            <input name="txtn41" type="text" id="txtn41" value="<?= $n[4][1]?>" size = "5"/>
+            <input name="txtn41" type="number" id="txtn41" value="<?= $n[4][1]?>" size = "5" min ="0" required/>
           </td>
           <td>
-            <input name="txtn42" type="text" id="txtn42" value="<?= $n[4][2]?>" size = "5"/>
+            <input name="txtn42" type="number" id="txtn42" value="<?= $n[4][2]?>" size = "5" min ="0" required/>
           </td>
           <td>
-            <input name="txtn43" type="text" id="txtn43" value="<?= $n[4][3]?>" size = "5"/>
+            <input name="txtn43" type="number" id="txtn43" value="<?= $n[4][3]?>" size = "5" min ="0" required/>
           </td>
           <td>
-            <input name="txtn44" type="text" id="txtn44" value="<?= 0?>" size = "5"readonly/>
+            <input name="txtn44" type="number" id="txtn44" value="<?= 0?>" size = "5" readonly min ="0" required/>
           </td>
         </tr>
         <tr></tr>

@@ -1,6 +1,6 @@
 <?php
 
-  define('NUMBER_OF_NODES', 8);
+  define('NUMBER_OF_NODES', 3);
   define('NUMBER_OF_EDGES_PER_NODE', 2);
 
   $adjacentList = array();
@@ -69,7 +69,7 @@
   }
 ?>
 
-<form action="./index.php" method="post">
+<form action="../index.php" method="post">
     <div style="text-align: center;">
         <input type="submit" value="Volver" style='width:70px; height:40px' class="btn btn-outline-success mt-3 mb-3" />
     </div>

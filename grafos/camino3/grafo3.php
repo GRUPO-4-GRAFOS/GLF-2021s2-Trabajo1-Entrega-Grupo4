@@ -44,6 +44,7 @@
     ?>
     <form method="post" action="./grafo3.php">
       <table border="0"> 
+      <caption>ESCRIBIR PESO DE CONEXION</caption>
         <tr>
           <th colspan="4" class="text-center" scope="col">ESCRIBIR PESO DE CONEXION</th>
         </tr>
@@ -56,37 +57,37 @@
         <tr>
           <td> A </td>
           <td>
-            <input name="txtn00" type="number" id="txtn00"value="<?= 0?>" size = "3" readonly min ="0" max = "10" required/> 
+            <input name="txtn00" type="number" id="txtn00"value="<?= 0?>" size = "3" readonly min ="0" required/> 
           </td>
           <td>
-            <input name="txtn01" type="number" id="txtn01"value="<?= $n[0][1]?>" size = "3" min ="0" max = "10" required/> 
+            <input name="txtn01" type="number" id="txtn01"value="<?= $n[0][1]?>" size = "3" min ="0"  required/> 
           </td>
           <td>
-            <input name="txtn02" type="number" id="txtn02" value="<?= $n[0][2]?>" size = "3" min ="0" max = "10" required/> 
+            <input name="txtn02" type="number" id="txtn02" value="<?= $n[0][2]?>" size = "3" min ="0" required/> 
           </td>
         </tr>
         <tr>
           <td> B </td>
           <td>
-            <input name="txtn10" type="number" id="txtn10" value="<?= $n[1][0]?>" size = "3" min ="0" max = "10" required/> 
+            <input name="txtn10" type="number" id="txtn10" value="<?= $n[1][0]?>" size = "3" min ="0" required/> 
           </td>
           <td>
-            <input name="txtn11" type="number" id="txtn11" value="<?= 0?>" size = "3" readonly min ="0" max = "10" required/>
+            <input name="txtn11" type="number" id="txtn11" value="<?= 0?>" size = "3" readonly min ="0" required/>
           </td>
           <td>
-            <input name="txtn12" type="number" id="txtn12" value="<?= $n[1][2]?>" size = "3" min ="0" max = "10" required/> 
+            <input name="txtn12" type="number" id="txtn12" value="<?= $n[1][2]?>" size = "3" min ="0" required/> 
           </td>
         </tr>
         <tr>
           <td> C </td>
           <td>
-            <input name="txtn20" type="number" id="txtn20" value="<?= $n[2][0]?>" size = "3" min ="0" max = "10" required/> 
+            <input name="txtn20" type="number" id="txtn20" value="<?= $n[2][0]?>" size = "3" min ="0" required/> 
           </td>
           <td>
-            <input name="txtn21" type="number" id="txtn21" value="<?= $n[2][1]?>" size = "3" min ="0" max = "10" required/> 
+            <input name="txtn21" type="number" id="txtn21" value="<?= $n[2][1]?>" size = "3" min ="0" required/> 
           </td>
           <td>
-            <input name="txtn22" type="number" id="txtn22" value="<?= 0?>" size = "3" readonly min ="0" max = "10" required/> 
+            <input name="txtn22" type="number" id="txtn22" value="<?= 0?>" size = "3" readonly min ="0" required/> 
           </td>
         </tr>
         <tr></tr>
@@ -107,6 +108,7 @@
       }
     ?>
     <table border="0"> 
+    <caption>Matriz De Adyacencia</caption>
       <tr>
         <th colspan="4" scope="col" class="text-center">Matriz De Adyacencia</th>
       </tr>   
@@ -136,10 +138,11 @@
       </tr>
     </table>
     <form action="../../conexo/conexo3.php" method="post">
-      <button type="submit" class="btn btn-outline-success mt-3 mb-3">Conexo?</button>
+      <button type="submit" class="btn btn-outline-success mt-3 mb-3">Conexo?</a>
     </form>
     <form action="../../index.php" method="post">
       <button type="submit" class="btn btn-outline-success mt-3 mb-3">volver</button>
     </form>
+
   </body>
 </html>

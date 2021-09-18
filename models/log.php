@@ -11,7 +11,7 @@
     function writeline($type, $message){
         date_default_timezone_set("America/Santiago");
         $date = new DateTime();
-        fputs($this->filelog, "[".$type."] [".$date->format("d-m-y h:i:s ")."]:".$message ."\n");
+        fputs($this->filelog, "[".$type."] [".$date->format("d-m-y H:i:s ")."]:".$message ."\n");
     }
 
     function close(){
