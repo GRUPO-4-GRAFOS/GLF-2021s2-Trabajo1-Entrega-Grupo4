@@ -15,8 +15,8 @@ d)Indicar el flujo máximo para un nodo de origen/entrada y otro de destino/sali
 e)Obtener el árbol generador mínimo mediante prim o kruskal. 
 
 ## integrantes
-  - Lucas 
+  - Lucas Catillo
   - Nicolas Garay
   - Rocio Leiva 
   - Paula Ruiz
-  - Victor 
+  - Victor Venegas
