@@ -28,11 +28,13 @@
         $n[0][1]= (int)$_POST ["txtn01"];
         $n[0][2]= (int)$_POST ["txtn02"];
         $n[0][3]= (int)$_POST ["txtn03"];
+        $n[0][4]= (int)$_POST ["txtn04"];
 
         $n[1][0]= (int)$_POST ["txtn10"];
         $n[1][1]= (int)$_POST ["txtn11"];
         $n[1][2]= (int)$_POST ["txtn12"];
         $n[1][3]= (int)$_POST ["txtn13"];
+        $n[1][4]= (int)$_POST ["txtn14"];
 
         $n[2][0]= (int)$_POST ["txtn20"];
         $n[2][1]= (int)$_POST ["txtn21"];
@@ -45,6 +47,12 @@
         $n[3][2]= (int)$_POST ["txtn32"];
         $n[3][3]= (int)$_POST ["txtn33"];
         $n[3][4]= (int)$_POST ["txtn34"];
+
+        $n[4][0]= (int)$_POST ["txtn40"];
+        $n[4][1]= (int)$_POST ["txtn41"];
+        $n[4][2]= (int)$_POST ["txtn42"];
+        $n[4][3]= (int)$_POST ["txtn43"];
+        $n[4][4]= (int)$_POST ["txtn44"];
       }
       for($i=0; $i<5; $i++){
         for($j=0; $j<5; $j++){
@@ -52,9 +60,9 @@
         }
       }
     ?>
-    <form method="post" action="grafo.php">
+    <form method="post" action="grafo5.php">
       <table border="0"> 
-        <caption>ESCRIBIR PESO DE CONEXION</caption>
+        <caption>CLICK A "MOSTRAR" PARA VER SOLUCIONES</caption>
         <tr>
           <th class="text-center" scope="col" colspan="6">ESCRIBIR PESO DE CONEXION</th>
         </tr>
@@ -172,9 +180,9 @@
           }
         }
       }
+
     ?>
     <table border="0"> 
-      <caption>Matriz De Adyacencia</caption>
       <tr>
           <th colspan="6" class="text-center" scope="col">Matriz De Adyacencia</th>
       </tr>   
@@ -227,8 +235,49 @@
         <td><?php echo $bin[4][4];?></td>
       </tr>
     </table>
-    <form action="../../index.php" method="post">   
+<tr>EL GRAFO </tr>
+
+<?php   
+    $cont=0;
+      $ver=0;
+      $elem=0;
+      $i=0;   
+    for($i=0; $i<4; $i++){
+      for($j=0; $j<5; $j++){
+        if($i != $j && $j > $i){  
+          if($bin[$i][$j] ==1 || $bin[$j][$i] ==1 ){
+              $cont++;
+              }
+          }   
+        }
+      }  
+      if ($cont==4){
+         echo 'ES CONEXA!!';
+      }
+      else{
+        echo 'NO ES CONEXA!!';
+      }
+?>
+<form action="../../caminomascorto/caminomascorto5.php" method="post"> 
+          Nodo de incio: <select name="nodoinicio">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+            <option>E</option>
+</select>
+          Nodo Final: <select name="nodofinal">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+            <option>E</option>
+</select>
+              <button type="submit" class="btn btn-outline-success mt-3 mb-3"> camino mas corto</button>
+         
+</form>
+<form action="../../index.php" method="post">
       <button type="submit" class="btn btn-outline-success mt-3 mb-3">volver</button>
-    </form>
+</form>
   </body>
 </html>

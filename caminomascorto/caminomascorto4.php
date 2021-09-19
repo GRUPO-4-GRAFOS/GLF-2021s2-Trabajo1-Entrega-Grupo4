@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -21,6 +20,36 @@
     </div>
 
 <?php
+if(isset($_POST ["MatrizNodo"])){
+   $peso[0][0]= (int)$_POST ["txtn00"];
+   $peso[0][1]= (int)$_POST ["txtn01"];
+   $peso[0][2]= (int)$_POST ["txtn02"];
+
+   $peso[1][0]= (int)$_POST ["txtn10"];
+   $peso[1][1]= (int)$_POST ["txtn11"];
+   $peso[1][2]= (int)$_POST ["txtn12"];
+
+   $peso[2][0]= (int)$_POST ["txtn20"];
+   $peso[2][1]= (int)$_POST ["txtn21"];
+   $peso[2][2]= (int)$_POST ["txtn22"];
+ }
+ 
+include '../models/log.php';
+//LOG INFO
+date_default_timezone_set("America/Santiago");
+$log = new Log ('../log/loginfo.log');
+$log -> writeline ('info', "[grafo4.php] El usuario a seleccionado la cantidad de 4 nodos");
+$log -> writeline ('info', "[grafo4.php] El usuario a seleccionado el peso de  de AA es de 0");
+$log -> writeline ('info', "[grafo4.php] El usuario a seleccionado el peso de  de AB es de  $peso[0][1] ");
+$log -> writeline ('info', "[grafo4.php] El usuario a seleccionado el peso de  de AC es de ");
+$log -> writeline ('info', "[grafo4.php] El usuario a seleccionado el peso de  de BA es de ");
+$log -> writeline ('info', "[grafo4.php] El usuario a seleccionado el peso de  de BB es de 0");
+$log -> writeline ('info', "[grafo4.php] El usuario a seleccionado el peso de  de BC es de ");
+$log -> writeline ('info', "[grafo4.php] El usuario a seleccionado el peso de  de CA es de ");
+$log -> writeline ('info', "[grafo4.php] El usuario a seleccionado el peso de  de CB es de ");
+$log -> writeline ('info', "[grafo4.php] El usuario a seleccionado el peso de  de CC es de 0");
+$log ->close ();
+
 
 if ($_POST["nodoinicio"] == $_POST["nodofinal"]){
     echo "La distancia es igual a 0 por lo tanto la duración es 0";
@@ -68,14 +97,15 @@ else{
    } */ 
 }
 ?>
-<form action="../arbol/arbol3.php" method="post">
+<form action="../arbol/arbol4.php" method="post">
     <div style="text-align: center;">
         <input type="submit" value="arbol" style='width:70px; height:40px' class="btn btn-outline-success mt-3 mb-3" />
         </div>
 </form>
-<form action="../grafos/camino3/grafo3.php" method="post">
+<form action="../conexo/conexo4.php" method="post">
     <div style="text-align: center;">
         <input type="submit" value="volver" style='width:70px; height:40px' class="btn btn-outline-success mt-3 mb-3" />
     </div>
 </form>
-
+ </body>
+</html>
