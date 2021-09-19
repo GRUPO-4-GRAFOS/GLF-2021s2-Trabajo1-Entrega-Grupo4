@@ -38,16 +38,16 @@ include '../models/log.php';
 //LOG INFO
 date_default_timezone_set("America/Santiago");
 $log = new Log ('../log/loginfo.log');
-$log -> writeline ('info', "[grafo3.php] El usuario a seleccionado la cantidad de 3 nodos");
-$log -> writeline ('info', "[grafo3.php] El usuario a seleccionado el peso de  de AA es de 0");
-$log -> writeline ('info', "[grafo3.php] El usuario a seleccionado el peso de  de AB es de  $peso[0][1] ");
-$log -> writeline ('info', "[grafo3.php] El usuario a seleccionado el peso de  de AC es de ");
-$log -> writeline ('info', "[grafo3.php] El usuario a seleccionado el peso de  de BA es de ");
-$log -> writeline ('info', "[grafo3.php] El usuario a seleccionado el peso de  de BB es de 0");
-$log -> writeline ('info', "[grafo3.php] El usuario a seleccionado el peso de  de BC es de ");
-$log -> writeline ('info', "[grafo3.php] El usuario a seleccionado el peso de  de CA es de ");
-$log -> writeline ('info', "[grafo3.php] El usuario a seleccionado el peso de  de CB es de ");
-$log -> writeline ('info', "[grafo3.php] El usuario a seleccionado el peso de  de CC es de 0");
+$log -> writeline ('info', "[grafo5.php] El usuario a seleccionado la cantidad de 5 nodos");
+$log -> writeline ('info', "[grafo5.php] El usuario a seleccionado el peso de  de AA es de 0");
+$log -> writeline ('info', "[grafo5.php] El usuario a seleccionado el peso de  de AB es de  $peso[0][1] ");
+$log -> writeline ('info', "[grafo5.php] El usuario a seleccionado el peso de  de AC es de ");
+$log -> writeline ('info', "[grafo5.php] El usuario a seleccionado el peso de  de BA es de ");
+$log -> writeline ('info', "[grafo5.php] El usuario a seleccionado el peso de  de BB es de 0");
+$log -> writeline ('info', "[grafo5.php] El usuario a seleccionado el peso de  de BC es de ");
+$log -> writeline ('info', "[grafo5.php] El usuario a seleccionado el peso de  de CA es de ");
+$log -> writeline ('info', "[grafo5.php] El usuario a seleccionado el peso de  de CB es de ");
+$log -> writeline ('info', "[grafo5.php] El usuario a seleccionado el peso de  de CC es de 0");
 $log ->close ();
 
 
@@ -97,14 +97,15 @@ else{
    } */ 
 }
 ?>
-<form action="../arbol/arbol3.php" method="post">
+<form action="../arbol/arbol5.php" method="post">
     <div style="text-align: center;">
         <input type="submit" value="arbol" style='width:70px; height:40px' class="btn btn-outline-success mt-3 mb-3" />
         </div>
 </form>
-<form action="../conexo/conexo3.php" method="post">
+<form action="../conexo/conexo5.php" method="post">
     <div style="text-align: center;">
         <input type="submit" value="volver" style='width:70px; height:40px' class="btn btn-outline-success mt-3 mb-3" />
     </div>
 </form>
-
+ </body>
+</html>

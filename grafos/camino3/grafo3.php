@@ -19,6 +19,7 @@
       <h1>Trabajo N°1 Grafo</h1>
     </div>
     <?php
+    include '../../models/log.php';
       error_reporting(0);
       $s=0; $i=0; $j=0;
       $n=array();
@@ -41,6 +42,23 @@
           $bin[$i][$j]=$n[$i][$j];
         }
       }
+          //LOG INFO
+      date_default_timezone_set('America/Santiago');
+      $log = new Log ('../../log/loginfo.log');
+      $log -> writeline ('info', '[grafo3.php] El usuario a seleccionado la cantidad de 3 nodos');
+      $cuerda = array('[grafo3.php] El usuario a seleccionado el peso de ',$n[0][1],' para la unión AB');
+      $log -> writeline ('info', implode($cuerda));
+      $cuerda = array('[grafo3.php] El usuario a seleccionado el peso de ',$n[0][2],' para la unión AC');
+      $log -> writeline ('info', implode($cuerda));
+      $cuerda = array('[grafo3.php] El usuario a seleccionado el peso de ',$n[1][0],' para la unión BA');
+      $log -> writeline ('info', implode($cuerda));
+      $cuerda = array('[grafo3.php] El usuario a seleccionado el peso de ',$n[1][2],' para la unión BC');
+      $log -> writeline ('info', implode($cuerda));
+      $cuerda = array('[grafo3.php] El usuario a seleccionado el peso de ',$n[2][0],' para la unión CA');
+      $log -> writeline ('info', implode($cuerda));
+      $cuerda = array('[grafo3.php] El usuario a seleccionado el peso de ',$n[2][1],' para la unión CB');
+      $log -> writeline ('info', implode($cuerda));
+      $log ->close ();
     ?>
     <form method="post" action="./grafo3.php">
       <table border="0"> 
@@ -99,6 +117,9 @@
       </table>
     </form>
     <?php
+    $cont=0;
+    $ver=0;
+    $elem=0;
       for($i=0; $i<3; $i++){
         for($j=0; $j<3; $j++){
           if($bin[$i][$j]>0){
@@ -106,6 +127,25 @@
           }
         }
       }
+      $i=0;
+        for($j=0; $j<3; $j++){
+          if($i != $j && $j > $i){  
+            if($bin[$i][$j] ==1 || $bin[$j][$i] ==1 ){
+                $ver= $i+1; 
+                $cont++;
+                if($bin[$ver][$ver+1] == 1 ||$bin[$ver+1][$ver] == 1 ){
+                  echo 'ES CONEXA!!';
+                  $elem++;
+                }
+            }   
+          }
+        }
+        if ($cont==2){
+          echo 'ES CONEXA!!';
+        }
+        if ($cont < 2 && $elem==0){
+          echo 'NO ES CONEXA!!';
+        }
     ?>
     <table border="0"> 
     <caption>Matriz De Adyacencia</caption>
@@ -137,9 +177,26 @@
         <td><?php echo $bin[2][2];?></td>
       </tr>
     </table>
-    <form action="../../conexo/conexo3.php" method="post">
-      <button type="submit" class="btn btn-outline-success mt-3 mb-3">Conexo?</a>
-    </form>
+
+<form action="../arbol/arbol3.php" method="post">
+    <div style="text-align: center;">
+        <input type="submit" value="arbol" style='width:70px; height:40px' class="btn btn-outline-success mt-3 mb-3" />
+        </div>
+</form>
+    <form action="./grafo3.php" method="post"> 
+          Nodo de incio: <select name="nodoinicio">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+</select>
+          Nodo Final: <select name="nodofinal">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+</select>
+              <button type="submit" class="btn btn-outline-success mt-3 mb-3"> camino mas corto</button>
+         
+</form>
     <form action="../../index.php" method="post">
       <button type="submit" class="btn btn-outline-success mt-3 mb-3">volver</button>
     </form>

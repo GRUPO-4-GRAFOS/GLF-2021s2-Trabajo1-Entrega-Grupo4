@@ -17,9 +17,10 @@
   <body>
     <div class="titulo">
       <h1>Trabajo N°1 Grafo</h1>
-    </div><?php
+    </div>
+<?php
 
-  define('NUMBER_OF_NODES', 3);
+  define('NUMBER_OF_NODES', 4);
   define('NUMBER_OF_EDGES_PER_NODE', 2);
 
   $adjacentList = array();

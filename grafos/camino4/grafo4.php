@@ -27,7 +27,8 @@
         $n[0][0]= (int)$_POST ["txtn00"];
         $n[0][1]= (int)$_POST ["txtn01"];
         $n[0][2]= (int)$_POST ["txtn02"];
-        $n[0][3]= (int)$_POST ["txtn03"];  
+        $n[0][3]= (int)$_POST ["txtn03"];
+
         $n[1][0]= (int)$_POST ["txtn10"];
         $n[1][1]= (int)$_POST ["txtn11"];
         $n[1][2]= (int)$_POST ["txtn12"];
@@ -37,6 +38,11 @@
         $n[2][1]= (int)$_POST ["txtn21"];
         $n[2][2]= (int)$_POST ["txtn22"];
         $n[2][3]= (int)$_POST ["txtn23"];
+
+        $n[3][0]= (int)$_POST ["txtn30"];
+        $n[3][1]= (int)$_POST ["txtn31"];
+        $n[3][2]= (int)$_POST ["txtn32"];
+        $n[3][3]= (int)$_POST ["txtn33"];
       }
       for($i=0; $i<4; $i++){
         for($j=0; $j<4; $j++){
@@ -44,7 +50,7 @@
         }
       }
     ?>
-    <form method="post" action="grafo.php">
+    <form method="post" action="grafo4.php">
       <table border="0"> 
         <caption>ESCRIBIR PESO DE CONEXION</caption>
         <tr>
@@ -133,7 +139,28 @@
           }
         }
       }
+
+      $cont=0;
+      $ver=0;
+      $elem=0;
+      $i=0;   
+    for($i=0; $i<3; $i++){
+      for($j=0; $j<4; $j++){
+        if($i != $j && $j > $i){  
+          if($bin[$i][$j] ==1 || $bin[$j][$i] ==1 ){
+              $cont++;
+              }
+          }   
+        }
+      }  
+      if ($cont==3){
+        echo 'ES CONEXA!!';
+      }
+      else{
+        echo 'NO ES CONEXA!!';
+      }
     ?>
+
     <table border="0"> 
       <caption>Matriz De Adyacencia</caption>
       <tr>
@@ -175,8 +202,25 @@
         <td><?php echo $bin[3][3];?></td>
       </tr>
     </table>
-    <form action="../../index.php" method="post">
-      <button type="submit" class="btn btn-outline-success mt-3 mb-3">volver</button>
     </form>
+<form action="../../caminomascorto/caminomascorto4.php" method="post"> 
+          Nodo de incio: <select name="nodoinicio">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+</select>
+          Nodo Final: <select name="nodofinal">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+</select>
+              <button type="submit" class="btn btn-outline-success mt-3 mb-3"> camino mas corto</button>
+         
+</form>
+<form action="../../index.php" method="post">
+      <button type="submit" class="btn btn-outline-success mt-3 mb-3">volver</button>
+</form>
   </body>
 </html>
