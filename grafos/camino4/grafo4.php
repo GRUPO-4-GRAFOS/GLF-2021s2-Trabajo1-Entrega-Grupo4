@@ -19,7 +19,7 @@
       <h1>Trabajo N°1 Grafo</h1>
     </div>
     <?php
-      error_reporting(0);
+    ini_set('display_errors', '0');
       $s=0; $i=0; $j=0;
       $n=array();
       $bin= array();

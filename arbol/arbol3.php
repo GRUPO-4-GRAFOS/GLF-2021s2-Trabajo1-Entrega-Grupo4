@@ -45,9 +45,9 @@
       $added = false;
       while (!$added) {
         for ($j = 0; $j < NUMBER_OF_EDGES_PER_NODE; ++$j) {
-          $adjacentNode = rand(0, NUMBER_OF_NODES - 1);
+          $adjacentNode = random_int(0, NUMBER_OF_NODES - 1);
             if ($adjacentNode != $i && $adjacentNode != $j) {
-              $adjacentNodeCost = rand(1, 5);
+              $adjacentNodeCost = random_int(1, 5);
               $adjacentList[$i][$adjacentNode] = $adjacentNodeCost;
               $adjacentList[$adjacentNode][$i] = $adjacentNodeCost;
               $added = true;

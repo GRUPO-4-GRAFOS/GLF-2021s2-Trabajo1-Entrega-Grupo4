@@ -47,11 +47,12 @@
          </p>
       </div>
       <div class="col-sm-6 text-center">
-        <form action="./grafos/camino3/grafo3.php" method="post">
+        <form action="./grafos/grafoGlobal.php" method="post">
             <legend><h2>Crear Grafo</h2></legend>
               <div class="Titulo">
                 <label class="form-label rojo"><h4>Seleccione la cantidad de nodos</h4></label>
               </div>
+              <input name="MatrizNodo" type="hidden" value="3"/>
               <button type="submit" class="btn btn-outline-success mt-3 mb-3">3 Nodos</button>
         </form>
         <form action="./grafos/camino4/grafo4.php" method="post">
