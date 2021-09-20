@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="icon/png" href="http://4.bp.blogspot.com/-rYMEtsNWBCA/VgAnJXRxlKI/AAAAAAAAQU4/KnHQfSITOXw/s640/350px-Complete-edge-coloring.svg.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="../../css/styles.css">
@@ -14,6 +15,7 @@
         <h1>Trabajo N°1 Grafo</h1>
     </div>
     <?php
+      include '../../models/log.php';
       ini_set('display_errors', '0');
       $s=0; $i=0; $j=0;
       $n=array();
@@ -54,8 +56,59 @@
           $bin[$i][$j]=$n[$i][$j];
         }
       }
+            //LOG INFO
+            date_default_timezone_set('America/Santiago');
+            $log = new Log ('../../log/loginfo.log');
+            $log -> writeline ('info', '[grafo4.php] El usuario a seleccionado la cantidad de 5 nodos');
+            $cuerda = array('[grafo4.php] El usuario a seleccionado el peso de ',$n[0][1],' para la unión AB');
+            $log -> writeline ('info', implode($cuerda));
+            $cuerda = array('[grafo5.php] El usuario a seleccionado el peso de ',$n[0][2],' para la unión AC');
+            $log -> writeline ('info', implode($cuerda));
+            $cuerda = array('[grafo5.php] El usuario a seleccionado el peso de ',$n[0][3],' para la unión AD');
+            $log -> writeline ('info', implode($cuerda));
+            $cuerda = array('[grafo5.php] El usuario a seleccionado el peso de ',$n[0][4],' para la unión AE');
+            $log -> writeline ('info', implode($cuerda));
+            $cuerda = array('[grafo5.php] El usuario a seleccionado el peso de ',$n[1][0],' para la unión BA');
+            $log -> writeline ('info', implode($cuerda));
+            $cuerda = array('[grafo5.php] El usuario a seleccionado el peso de ',$n[1][2],' para la unión BC');
+            $log -> writeline ('info', implode($cuerda));
+            $cuerda = array('[grafo5.php] El usuario a seleccionado el peso de ',$n[1][3],' para la unión BD');
+            $log -> writeline ('info', implode($cuerda));
+            $cuerda = array('[grafo5.php] El usuario a seleccionado el peso de ',$n[1][4],' para la unión BE');
+            $log -> writeline ('info', implode($cuerda));
+            $cuerda = array('[grafo5.php] El usuario a seleccionado el peso de ',$n[2][0],' para la unión CA');
+            $log -> writeline ('info', implode($cuerda));
+            $cuerda = array('[grafo5.php] El usuario a seleccionado el peso de ',$n[2][1],' para la unión CB');
+            $log -> writeline ('info', implode($cuerda));
+            $cuerda = array('[grafo5.php] El usuario a seleccionado el peso de ',$n[2][3],' para la unión CD');
+            $log -> writeline ('info', implode($cuerda));
+            $cuerda = array('[grafo5.php] El usuario a seleccionado el peso de ',$n[2][4],' para la unión CE');
+            $log -> writeline ('info', implode($cuerda));
+            $cuerda = array('[grafo5.php] El usuario a seleccionado el peso de ',$n[3][0],' para la unión DA');
+            $log -> writeline ('info', implode($cuerda));
+            $cuerda = array('[grafo5.php] El usuario a seleccionado el peso de ',$n[3][1],' para la unión DB');
+            $log -> writeline ('info', implode($cuerda));
+            $cuerda = array('[grafo5.php] El usuario a seleccionado el peso de ',$n[3][2],' para la unión DC');
+            $log -> writeline ('info', implode($cuerda));
+            $cuerda = array('[grafo5.php] El usuario a seleccionado el peso de ',$n[3][4],' para la unión DE');
+            $log -> writeline ('info', implode($cuerda));
+            $cuerda = array('[grafo5.php] El usuario a seleccionado el peso de ',$n[4][0],' para la unión EA');
+            $log -> writeline ('info', implode($cuerda));
+            $cuerda = array('[grafo5.php] El usuario a seleccionado el peso de ',$n[4][1],' para la unión EB');
+            $log -> writeline ('info', implode($cuerda));
+            $cuerda = array('[grafo5.php] El usuario a seleccionado el peso de ',$n[4][2],' para la unión EC');
+            $log -> writeline ('info', implode($cuerda));
+            $cuerda = array('[grafo5.php] El usuario a seleccionado el peso de ',$n[4][3],' para la unión ED');
+            $log -> writeline ('info', implode($cuerda));
+            $log ->close ();
     ?>
     <div class="container">
+    <div class="row">   <div class= "col-md-6 offset-md-3" > <ul class="list-group">
+          <li class="list-group-item text-center azul">Instrucciones: </li> 
+          <li class="list-group-item">a) En los canales de texto poner el peso de la arista</li> 
+          <li class="list-group-item">b) Si su arista no tiene conexion con esos nodos, por favor ingrese 0</li> 
+          <li class="list-group-item">c) Presione "mostrar" para  actualizar la matriz de adyacencia</li> 
+          </ul></div></div>
       <div class="row">
         <div class="col">
           <form method="post" action="./grafo5.php" class="my-4">
@@ -173,27 +226,17 @@
           </form>
         </div>
         <div class="col">
-          <?php   
-            $cont=0;
-            $ver=0;
-            $elem=0;
-            $i=0;   
-            for($i=0; $i<4; $i++){
-              for($j=0; $j<5; $j++){
-                if($i != $j && $j > $i){  
-                  if($bin[$i][$j] ==1 || $bin[$j][$i] ==1 ){
-                      $cont++;
-                  }
-                }   
-              }
-            }  
-            if ($cont==4){
-              echo 'ES CONEXA!!';
-            }else{
-              echo 'NO ES CONEXA!!';
-            }
-          ?>
-          <table class="table">
+<?php
+      for($i=0; $i<5; $i++){
+        for($j=0; $j<5; $j++){
+          if($bin[$i][$j]>0){
+            $bin[$i][$j]=1;
+          }
+        }
+      }
+
+?>
+          <table class="table mt-4">
             <caption>Matriz De Adyacencia</caption>
             <tr>
               <th colspan="6" class="text-center" scope="col">Matriz De Adyacencia</th>
@@ -247,6 +290,51 @@
                 <td><?php echo $bin[4][4];?></td>
               </tr>
             </table>
+            <tr>EL GRAFO ES:  </tr>
+
+            <?php   
+    $cont=0;
+    $ver=0;
+    $elem=0;
+    $i=0;   
+    for($i=0; $i<4; $i++){
+      for($j=0; $j<5; $j++){
+        if($i != $j && $j > $i){  
+          if($bin[$i][$j] ==1 || $bin[$j][$i] ==1 ){
+              $cont++;
+              }
+          }   
+        }
+      }  
+      if ($cont>=4){
+        echo 'CONEXO!!';
+        echo ('<br/>');
+      }
+      else{
+        echo 'NO CONEXO!!';
+        echo ('<br/>');
+      }
+    for($i=0; $i<4; $i++){
+      for($j=0; $j<5; $j++){
+        if($i != $j && $j > $i){  
+          if(($bin[$i][$j] ==1 && $bin[$j][$i] == 0) || ($bin[$i][$j] ==0 && $bin[$j][$i] == 1) ){
+              $ver++;
+          }
+        }   
+      }
+    }
+?>
+<tr>Es del tipo</tr>
+<?php   
+    if($ver>0){
+      echo 'Dirigido!';
+      echo ('<br/>');
+    }
+    else{
+      echo 'NO Dirigido!';
+      echo ('<br/>');    
+    } 
+?>
           </div>
         </div>
         <div class="row">

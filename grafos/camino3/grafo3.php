@@ -64,7 +64,7 @@
               <div class="col-sm-7">
           <form method="post" action="./grafo3.php" class="my-4">
             <table class="table"> 
-              <caption>ESCRIBIR PESO DE CONEXION</caption>
+              <caption>CLICK A "MOSTRAR" PARA VER SOLUCIONES</caption>
               <tr>
                 <th colspan="4" class="text-center" scope="col">ESCRIBIR PESO DE CONEXION</th>
               </tr>
@@ -162,6 +162,7 @@
               <td><?php echo $bin[2][2];?></td>
             </tr>
           </table>
+          <tr>EL GRAFO ES:  </tr>
           <?php 
 $cont=0;
 $ver=0;
@@ -176,7 +177,7 @@ for($i=0; $i<2; $i++){
       }   
     }
   }  
-  if ($cont==2){
+  if ($cont>=2){
     echo 'CONEXO!!';
     echo ('<br/>');
   }
@@ -232,8 +233,6 @@ for($i=0; $i<2; $i++){
         </div>
       </div>
     </div>
-  </body>
-</html>
 <?php
 if ($_POST["nodoinicio"] == $_POST["nodofinal"]){
     echo "La distancia es igual a 0 por lo tanto la duración es 0";
@@ -281,7 +280,6 @@ else{
    } */ 
 }
 ?>
-
 
   </body>
 </html>
