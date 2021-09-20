@@ -134,15 +134,44 @@
                 $ver= $i+1; 
                 $cont++;
                 if($bin[$ver][$ver+1] == 1 ||$bin[$ver+1][$ver] == 1 ){
-                  echo 'ES CONEXA!!';
                   $elem++;
+                  
                 }
             }   
           }
         }
         if ($cont==2){
           echo 'ES CONEXA!!';
+          for($i=0; $i<3; $i++){
+            for($j=0; $j<3; $j++){
+              if(i!=j){
+                if($bin[$i][$j] == 1 && $bin[$j][$i] == 0){
+                   $aux++;
+                   echo $aux;
+                 }
+                }
+              }
+              if(i!=j){
+                if($bin[$i][$j] == 1 && $bin[$j][$i] == 0){
+                   $aux++;
+                   echo $aux;
+                 }
+            }
+          }
+        if($aux<1){
+          for($j=0; $j<3; $j++){
+              $suma=$suma+$bin[i][j];
+          }
+          if($suma%2!=0){
+            echo"no es euleriano";
+            echo $suma;
+         }
+
+          else{
+          echo "Si es euleriano";
+          }
         }
+      }
         if ($cont < 2 && $elem==0){
           echo 'NO ES CONEXA!!';
         }
@@ -178,7 +207,7 @@
       </tr>
     </table>
 
-<form action="../arbol/arbol3.php" method="post">
+<form action="../../arbol/arbol3.php" method="post">
     <div style="text-align: center;">
         <input type="submit" value="arbol" style='width:70px; height:40px' class="btn btn-outline-success mt-3 mb-3" />
         </div>
@@ -195,10 +224,59 @@
             <option>C</option>
 </select>
               <button type="submit" class="btn btn-outline-success mt-3 mb-3"> camino mas corto</button>
-         
+
 </form>
+<?php
+if ($_POST["nodoinicio"] == $_POST["nodofinal"]){
+    echo "La distancia es igual a 0 por lo tanto la duración es 0";
+}
+else{
+   echo "hola";
+/* for($i=0; $i<3; $i++){
+   for($j=0; $j<3; $j++){
+     if ($peso[i][j]  > 0){
+
+     }
+     
+   }
+
+  
+   function dijkstra($grafo, $source(NOSE), $target (NOSE)){
+      $vertices = array ();
+      $neighbours = array ();
+      $path = array ();
+      foreach ($grafo as $edge){
+          array_push($vertices, $edge[0], $edge[1]);
+          $neighbours[$edge[0][] = array('endeEdge'-> $edge[1], 'cost'-> $edge[2]);
+      
+        }
+      $vertices = array_unique($vertices);
+
+      foreach ($vertices as $vertex){
+          $dist[$vertex] = INF;
+          $previous[$vertex] = NULL;
+      }
+
+      $dist[$source] = 0;
+      $g =$vertices;
+      while (count($g) > 0){
+       $min = INF;
+       foreach ($g as $vertex){
+        if ($dist[$vertex]  < $min){
+           $min = $dist[$vertex];
+           $u =
+        }       
+    }
+       }   
+      }
+      } 
+   } */ 
+}
+?>
     <form action="../../index.php" method="post">
-      <button type="submit" class="btn btn-outline-success mt-3 mb-3">volver</button>
+    <div style="text-align: center;">
+        <input type="submit" value="Volver a la pagina principal" style='width:240px; height:40px' class="btn btn-outline-success mt-3 mb-3" />
+    </div>
     </form>
 
   </body>
