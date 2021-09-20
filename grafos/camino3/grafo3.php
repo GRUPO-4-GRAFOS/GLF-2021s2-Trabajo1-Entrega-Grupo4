@@ -203,24 +203,6 @@
       </div>
       <div class="row">
         <div class="col-sm-6">
-          <form action="./grafo3.php">
-          <label for="nodoInicio" class="my-3">Nodo Inicio: </label>
-          <select id="nodoInicio" class="form-select">
-            <option selected>Seleccione un Nodo</option>
-            <option>A</option>
-            <option>B</option>
-            <option>C</option>
-          </select>
-          <label for="nodoFinal" class="my-3">Nodo Final: </label>
-          <select id="nodoInicio" class="form-select">
-            <option selected>Seleccione un Nodo</option>
-            <option>A</option>
-            <option>B</option>
-            <option>C</option>
-          </select>
-          <input type="submit" class="btn btn-primary mt-3" value="Enviar" />
-        </form>
-        <a href="#" class="btn btn-outline-success btn-lg my-5">Ver Arbol</a>
           <a href="../../index.php" class="btn btn-outline-danger btn-lg my-5">Volver al Inicio</a>
         </div>
       </div>
