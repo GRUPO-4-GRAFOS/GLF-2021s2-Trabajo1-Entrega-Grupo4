@@ -23,12 +23,24 @@
           $n[0][0]= (int)$_POST ["txtn00"];
           $n[0][1]= (int)$_POST ["txtn01"];
           $n[0][2]= (int)$_POST ["txtn02"];
+          $n[0][3]= (int)$_POST ["txtn03"];
           $n[1][0]= (int)$_POST ["txtn10"];
           $n[1][1]= (int)$_POST ["txtn11"];
           $n[1][2]= (int)$_POST ["txtn12"];
+          $n[1][3]= (int)$_POST ["txtn13"];
           $n[2][0]= (int)$_POST ["txtn20"];
           $n[2][1]= (int)$_POST ["txtn21"];
           $n[2][2]= (int)$_POST ["txtn22"];
+          $n[2][3]= (int)$_POST ["txtn23"];
+          $n[3][0]= (int)$_POST ["txtn30"];
+          $n[3][1]= (int)$_POST ["txtn31"];
+          $n[3][2]= (int)$_POST ["txtn32"];
+          $n[3][3]= (int)$_POST ["txtn33"];
+        }
+        for($i=0; $i<4; $i++){
+          for($j=0; $j<4; $j++){
+            $bin[$i][$j]=$n[$i][$j];
+          }
         }
         for($i=0; $i<3; $i++){
           for($j=0; $j<3; $j++){
@@ -56,7 +68,7 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <form method="post" action="./grafo3.php" class="my-4">
+          <form method="post" action="./grafo4.php" class="my-4">
           <table class="table"> 
               <caption>ESCRIBIR PESO DE CONEXION</caption>
               <tr>

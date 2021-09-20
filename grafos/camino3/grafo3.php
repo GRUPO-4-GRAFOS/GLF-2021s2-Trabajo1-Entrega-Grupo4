@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="icon" type="icon/png" href="http://4.bp.blogspot.com/-rYMEtsNWBCA/VgAnJXRxlKI/AAAAAAAAQU4/KnHQfSITOXw/s640/350px-Complete-edge-coloring.svg.png">
     <link rel="stylesheet" href="../../css/styles.css">
     <title>Trabajo 1</title>
   </head>
@@ -53,8 +54,14 @@
         $log ->close ();
       ?>
     <div class="container">
+      <div class="row">   <div class= "col-md-6 offset-md-3" > <ul class="list-group">
+          <li class="list-group-item text-center azul">Instrucciones: </li> 
+          <li class="list-group-item">a) En los canales de texto poner el peso de la arista</li> 
+          <li class="list-group-item">b) Si su arista no tiene conexion con esos nodos, por favor ingrese 0</li> 
+          <li class="list-group-item">c) Presione "mostrar" para  actualizar la matriz de adyacencia</li> 
+          </ul></div></div>
       <div class="row">
-        <div class="col-sm-7">
+              <div class="col-sm-7">
           <form method="post" action="./grafo3.php" class="my-4">
             <table class="table"> 
               <caption>ESCRIBIR PESO DE CONEXION</caption>
@@ -113,7 +120,7 @@
           </form>
       </div>
       <div class="col-sm-5">
-        <?php
+      <?php
           $cont=0;
           $ver=0;
           $elem=0;
@@ -124,27 +131,8 @@
               }
             }
           }
-          $i=0;
-          for($j=0; $j<3; $j++){
-            if($i != $j && $j > $i){  
-              if($bin[$i][$j] ==1 || $bin[$j][$i] ==1 ){
-                  $ver= $i+1; 
-                  $cont++;
-                  if($bin[$ver][$ver+1] == 1 ||$bin[$ver+1][$ver] == 1 ){
-                    echo 'ES CONEXA!!';
-                    $elem++;
-                  }
-              }   
-            }
-          }
-          if ($cont==2){
-            echo 'ES CONEXA!!';
-          }
-          if ($cont < 2 && $elem==0){
-            echo 'NO ES CONEXA!!';
-          }
           ?>
-          <table border="0" class="table"> 
+          <table class="table mt-4"> 
             <caption>Matriz De Adyacencia</caption>
             <tr>
               <th colspan="4" scope="col" class="text-center">Matriz De Adyacencia</th>
@@ -174,7 +162,50 @@
               <td><?php echo $bin[2][2];?></td>
             </tr>
           </table>
+          <?php 
+$cont=0;
+$ver=0;
+$elem=0;
+$i=0;   
+for($i=0; $i<2; $i++){
+  for($j=0; $j<3; $j++){
+    if($i != $j && $j > $i){  
+      if($bin[$i][$j] ==1 || $bin[$j][$i] ==1 ){
+          $cont++;
+          }
+      }   
+    }
+  }  
+  if ($cont==2){
+    echo 'CONEXO!!';
+    echo ('<br/>');
+  }
+  else{
+    echo 'NO CONEXO!!';
+    echo ('<br/>');
+  }
 
+  for($i=0; $i<2; $i++){
+    for($j=0; $j<3; $j++){
+      if($i != $j && $j > $i){  
+        if(($bin[$i][$j] ==1 && $bin[$j][$i] == 0) || ($bin[$i][$j] ==0 && $bin[$j][$i] == 1) ){
+            $ver++;
+        }
+      }   
+    }
+  }
+  ?>
+  <tr>Es del tipo</tr>
+  <?php
+  if($ver>0){
+    echo 'ES Dirigido!';
+    echo ('<br/>');
+  }
+  else{
+    echo 'Es NO Dirigido!';
+    echo ('<br/>');
+  } 
+?>
         </div>
       </div>
       <div class="row">
@@ -193,10 +224,16 @@
             <option>A</option>
             <option>B</option>
             <option>C</option>
-</select>
-              <button type="submit" class="btn btn-outline-success mt-3 mb-3"> camino mas corto</button>
-
-</form>
+          </select>
+          <input type="submit" class="btn btn-primary mt-3" value="Enviar" />
+        </form>
+        <a href="#" class="btn btn-outline-success btn-lg my-5">Ver Arbol</a>
+          <a href="../../index.php" class="btn btn-outline-danger btn-lg my-5">Volver al Inicio</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
 <?php
 if ($_POST["nodoinicio"] == $_POST["nodofinal"]){
     echo "La distancia es igual a 0 por lo tanto la duración es 0";
@@ -244,11 +281,7 @@ else{
    } */ 
 }
 ?>
-    <form action="../../index.php" method="post">
-    <div style="text-align: center;">
-        <input type="submit" value="Volver a la pagina principal" style='width:240px; height:40px' class="btn btn-outline-success mt-3 mb-3" />
-    </div>
-    </form>
+
 
   </body>
 </html>
