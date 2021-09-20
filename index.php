@@ -12,14 +12,14 @@
   </head>
   <style>
   .rojo {
-    color: red;
+    color: #001240;
   }
   .azul {
     color: blue;
   }
   </style>
   <body>
-    <div class="titulo">
+    <div class="titulo mb-3">
           <h1>Trabajo N°1 Grafo</h1>
     </div>
     <div class="container">
@@ -49,13 +49,13 @@
               <div class="Titulo">
                 <label class="form-label rojo"><h4>Seleccione la cantidad de nodos</h4></label>
               </div>
-              <button type="submit" class="btn btn-outline-success mt-3 mb-3">3 Nodos</button>
+              <button type="submit" class="btn btn-success mt-3 mb-3">3 Nodos</button>
         </form>
         <form action="./grafos/camino4/grafo4.php" method="post">
-              <button type="submit" class="btn btn-outline-success mt-3 mb-3">4 Nodos</button>
+              <button type="submit" class="btn btn-success mt-3 mb-3">4 Nodos</button>
         </form>
         <form action="./grafos/camino5/grafo5.php" method="post">
-              <button type="submit" class="btn btn-outline-success mt-3 mb-3">5 Nodos</button>
+              <button type="submit" class="btn btn-success mt-3 mb-3">5 Nodos</button>
         </form>
     </div>
   </body>

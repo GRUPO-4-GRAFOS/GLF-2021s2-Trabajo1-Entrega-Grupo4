@@ -11,7 +11,7 @@
     <title>Trabajo 1</title>
   </head>
   <body>
-    <div class="titulo">
+    <div class="titulo mb-3">
       <h1>Trabajo N°1 Grafo</h1>
     </div>
       <?php
@@ -83,7 +83,7 @@
       <div class="row">
         <div class="col">
           <form method="post" action="./grafo4.php" class="my-4">
-          <table class="table"> 
+          <table class="table table-primary"> 
               <caption>CLICK A "MOSTRAR" PARA VER SOLUCIONES</caption>
               <tr>
                 <th colspan="5" class="text-center" scope="col">ESCRIBIR PESO DE CONEXION</th>
@@ -183,7 +183,7 @@
             echo 'NO ES CONEXA!!';
           }
         ?>
-        <table class="table mt-4"> 
+        <table class="table mt-4 table-primary"> 
           <caption>Matriz De Adyacencia</caption>
             <tr>
               <th colspan="5" class="text-center" scope="col">Matriz De Adyacencia</th>

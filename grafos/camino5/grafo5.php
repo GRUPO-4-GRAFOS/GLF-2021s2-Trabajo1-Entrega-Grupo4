@@ -11,7 +11,7 @@
     <title>Trabajo 1</title>
   </head>
   <body>
-    <div class="titulo">
+    <div class="titulo mb-3">
         <h1>Trabajo N°1 Grafo</h1>
     </div>
     <?php
@@ -112,7 +112,7 @@
       <div class="row">
         <div class="col">
           <form method="post" action="./grafo5.php" class="my-4">
-            <table class="table">
+            <table class="table table-primary">
               <caption>CLICK A "MOSTRAR" PARA VER SOLUCIONES</caption>
               <tr>
                 <th class="text-center" scope="col" colspan="6">ESCRIBIR PESO DE CONEXION</th>
@@ -236,7 +236,7 @@
       }
 
 ?>
-          <table class="table mt-4">
+          <table class="table mt-4 table-primary">
             <caption>Matriz De Adyacencia</caption>
             <tr>
               <th colspan="6" class="text-center" scope="col">Matriz De Adyacencia</th>
