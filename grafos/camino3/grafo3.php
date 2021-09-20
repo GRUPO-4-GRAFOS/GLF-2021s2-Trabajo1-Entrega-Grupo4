@@ -164,51 +164,6 @@
           </table>
           <tr>EL GRAFO ES:  </tr>
           <?php 
-<<<<<<< HEAD
-$cont=0;
-$ver=0;
-$elem=0;
-$i=0;   
-for($i=0; $i<2; $i++){
-  for($j=0; $j<3; $j++){
-    if($i != $j && $j > $i){  
-      if($bin[$i][$j] ==1 || $bin[$j][$i] ==1 ){
-          $cont++;
-          }
-      }   
-    }
-  }  
-  if ($cont>=2){
-    echo 'CONEXO!!';
-    echo ('<br/>');
-  }
-  else{
-    echo 'NO CONEXO!!';
-    echo ('<br/>');
-  }
-
-  for($i=0; $i<2; $i++){
-    for($j=0; $j<3; $j++){
-      if($i != $j && $j > $i){  
-        if(($bin[$i][$j] ==1 && $bin[$j][$i] == 0) || ($bin[$i][$j] ==0 && $bin[$j][$i] == 1) ){
-            $ver++;
-        }
-      }   
-    }
-  }
-  ?>
-  <tr>Es del tipo</tr>
-  <?php
-  if($ver>0){
-    echo 'ES Dirigido!';
-    echo ('<br/>');
-  }
-  else{
-    echo 'Es NO Dirigido!';
-    echo ('<br/>');
-  } 
-?>
-=======
             $cont=0;
             $ver=0;
             $elem=0;
@@ -244,7 +199,6 @@ for($i=0; $i<2; $i++){
               echo "Es NO Dirigido! <br/>";
             } 
             ?>
->>>>>>> rama-chino
         </div>
       </div>
       <div class="row">
@@ -271,56 +225,5 @@ for($i=0; $i<2; $i++){
         </div>
       </div>
     </div>
-<<<<<<< HEAD
-<?php
-if ($_POST["nodoinicio"] == $_POST["nodofinal"]){
-    echo "La distancia es igual a 0 por lo tanto la duración es 0";
-}
-else{
-   echo "hola";
-/* for($i=0; $i<3; $i++){
-   for($j=0; $j<3; $j++){
-     if ($peso[i][j]  > 0){
-
-     }
-     
-   }
-
-  
-   function dijkstra($grafo, $source(NOSE), $target (NOSE)){
-      $vertices = array ();
-      $neighbours = array ();
-      $path = array ();
-      foreach ($grafo as $edge){
-          array_push($vertices, $edge[0], $edge[1]);
-          $neighbours[$edge[0][] = array('endeEdge'-> $edge[1], 'cost'-> $edge[2]);
-      
-        }
-      $vertices = array_unique($vertices);
-
-      foreach ($vertices as $vertex){
-          $dist[$vertex] = INF;
-          $previous[$vertex] = NULL;
-      }
-
-      $dist[$source] = 0;
-      $g =$vertices;
-      while (count($g) > 0){
-       $min = INF;
-       foreach ($g as $vertex){
-        if ($dist[$vertex]  < $min){
-           $min = $dist[$vertex];
-           $u =
-        }       
-    }
-       }   
-      }
-      } 
-   } */ 
-}
-?>
-
-=======
->>>>>>> rama-chino
   </body>
 </html>

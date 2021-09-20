@@ -47,31 +47,6 @@
         date_default_timezone_set('America/Santiago');
         $log = new Log ('../../log/loginfo.log');
         $log -> writeline ('info', '[grafo4.php] El usuario a seleccionado la cantidad de 4 nodos');
-<<<<<<< HEAD
-        $cuerda = array('[grafo4.php] El usuario a seleccionado el peso de ',$n[0][1],' para la unión AB');
-        $log -> writeline ('info', implode($cuerda));
-        $cuerda = array('[grafo4.php] El usuario a seleccionado el peso de ',$n[0][2],' para la unión AC');
-        $log -> writeline ('info', implode($cuerda));
-        $cuerda = array('[grafo4.php] El usuario a seleccionado el peso de ',$n[0][3],' para la unión AD');
-        $log -> writeline ('info', implode($cuerda));
-        $cuerda = array('[grafo4.php] El usuario a seleccionado el peso de ',$n[1][0],' para la unión BA');
-        $log -> writeline ('info', implode($cuerda));
-        $cuerda = array('[grafo4.php] El usuario a seleccionado el peso de ',$n[1][2],' para la unión BC');
-        $log -> writeline ('info', implode($cuerda));
-        $cuerda = array('[grafo4.php] El usuario a seleccionado el peso de ',$n[1][3],' para la unión BD');
-        $log -> writeline ('info', implode($cuerda));
-        $cuerda = array('[grafo4.php] El usuario a seleccionado el peso de ',$n[2][0],' para la unión CA');
-        $log -> writeline ('info', implode($cuerda));
-        $cuerda = array('[grafo4.php] El usuario a seleccionado el peso de ',$n[2][1],' para la unión CB');
-        $log -> writeline ('info', implode($cuerda));
-        $cuerda = array('[grafo4.php] El usuario a seleccionado el peso de ',$n[2][3],' para la unión CD');
-        $log -> writeline ('info', implode($cuerda));
-        $cuerda = array('[grafo4.php] El usuario a seleccionado el peso de ',$n[3][0],' para la unión DA');
-        $log -> writeline ('info', implode($cuerda));
-        $cuerda = array('[grafo4.php] El usuario a seleccionado el peso de ',$n[3][1],' para la unión DB');
-        $log -> writeline ('info', implode($cuerda));
-        $cuerda = array('[grafo4.php] El usuario a seleccionado el peso de ',$n[3][2],' para la unión DC');
-=======
         $cuerda = array($mensajeLog,$n[0][1],' para la unión AB');
         $log -> writeline ('info', implode($cuerda));
         $cuerda = array($mensajeLog,$n[0][2],' para la unión AC');
@@ -95,7 +70,6 @@
         $cuerda = array($mensajeLog,$n[3][1],' para la unión DB');
         $log -> writeline ('info', implode($cuerda));
         $cuerda = array($mensajeLog,$n[3][2],' para la unión DC');
->>>>>>> rama-chino
         $log -> writeline ('info', implode($cuerda));
         $log ->close ();
       ?>
@@ -191,15 +165,6 @@
       </div>
       <div class="col">
         <?php
-          for($i=0; $i<4; $i++){
-            for($j=0; $j<4; $j++){
-              if($bin[$i][$j]>0){
-                $bin[$i][$j]=1;
-              }
-            }
-          }
-<<<<<<< HEAD
-=======
           $cont=0;
           $ver=0;
           $elem=0;
@@ -217,7 +182,6 @@
           else{
             echo 'NO ES CONEXA!!';
           }
->>>>>>> rama-chino
         ?>
         <table class="table mt-4"> 
           <caption>Matriz De Adyacencia</caption>
@@ -280,8 +244,7 @@
         echo ('<br/>');
       }
       else{
-        echo 'NO CONEXO!!';
-        echo ('<br/>');
+        echo "NO CONEXO!! <br/>";
       }
       for($i=0; $i<3; $i++){
         for($j=0; $j<4; $j++){
@@ -296,12 +259,10 @@
       <tr>Es del tipo</tr>
       <?php
       if($ver>0){
-        echo 'ES Dirigido!';
-        echo ('<br/>');
+        echo "ES Dirigido! <br/>";
       }
       else{
-        echo 'Es NO Dirigido!';
-        echo ('<br/>');
+        echo "Es NO Dirigido! <br/>";
       } 
       ?>
      </div>
