@@ -35,21 +35,21 @@
             $bin[$i][$j]=$n[$i][$j];
           }
         }
-          //LOG INFO
+        $mensajeLog = '[grafo3.php] El usuario a seleccionado el peso de '; 
         date_default_timezone_set('America/Santiago');
         $log = new Log ('../../log/loginfo.log');
         $log -> writeline ('info', '[grafo3.php] El usuario a seleccionado la cantidad de 3 nodos');
-        $cuerda = array('[grafo3.php] El usuario a seleccionado el peso de ',$n[0][1],' para la unión AB');
+        $cuerda = array($mensajeLog,$n[0][1],' para la unión AB');
         $log -> writeline ('info', implode($cuerda));
-        $cuerda = array('[grafo3.php] El usuario a seleccionado el peso de ',$n[0][2],' para la unión AC');
+        $cuerda = array($mensajeLog,$n[0][2],' para la unión AC');
         $log -> writeline ('info', implode($cuerda));
-        $cuerda = array('[grafo3.php] El usuario a seleccionado el peso de ',$n[1][0],' para la unión BA');
+        $cuerda = array($mensajeLog,$n[1][0],' para la unión BA');
         $log -> writeline ('info', implode($cuerda));
-        $cuerda = array('[grafo3.php] El usuario a seleccionado el peso de ',$n[1][2],' para la unión BC');
+        $cuerda = array($mensajeLog,$n[1][2],' para la unión BC');
         $log -> writeline ('info', implode($cuerda));
-        $cuerda = array('[grafo3.php] El usuario a seleccionado el peso de ',$n[2][0],' para la unión CA');
+        $cuerda = array($mensajeLog,$n[2][0],' para la unión CA');
         $log -> writeline ('info', implode($cuerda));
-        $cuerda = array('[grafo3.php] El usuario a seleccionado el peso de ',$n[2][1],' para la unión CB');
+        $cuerda = array($mensajeLog,$n[2][1],' para la unión CB');
         $log -> writeline ('info', implode($cuerda));
         $log ->close ();
       ?>
@@ -163,49 +163,41 @@
             </tr>
           </table>
           <?php 
-$cont=0;
-$ver=0;
-$elem=0;
-$i=0;   
-for($i=0; $i<2; $i++){
-  for($j=0; $j<3; $j++){
-    if($i != $j && $j > $i){  
-      if($bin[$i][$j] ==1 || $bin[$j][$i] ==1 ){
-          $cont++;
-          }
-      }   
-    }
-  }  
-  if ($cont==2){
-    echo 'CONEXO!!';
-    echo ('<br/>');
-  }
-  else{
-    echo 'NO CONEXO!!';
-    echo ('<br/>');
-  }
-
-  for($i=0; $i<2; $i++){
-    for($j=0; $j<3; $j++){
-      if($i != $j && $j > $i){  
-        if(($bin[$i][$j] ==1 && $bin[$j][$i] == 0) || ($bin[$i][$j] ==0 && $bin[$j][$i] == 1) ){
-            $ver++;
-        }
-      }   
-    }
-  }
-  ?>
-  <tr>Es del tipo</tr>
-  <?php
-  if($ver>0){
-    echo 'ES Dirigido!';
-    echo ('<br/>');
-  }
-  else{
-    echo 'Es NO Dirigido!';
-    echo ('<br/>');
-  } 
-?>
+            $cont=0;
+            $ver=0;
+            $elem=0;
+            $i=0;   
+            for($i=0; $i<2; $i++){
+              for($j=0; $j<3; $j++){
+                if(($i != $j && $j > $i) && ($bin[$i][$j] ==1 || $bin[$j][$i] ==1 )){  
+                    $cont++;
+                }
+              }   
+            } 
+            if ($cont==2){
+              echo "CONEXO!! <br/>";
+            }
+            else{
+              echo "NO CONEXO!! <br/>";
+            }
+            
+            for($i=0; $i<2; $i++){
+              for($j=0; $j<3; $j++){
+                if(($i != $j && $j > $i) && (($bin[$i][$j] ==1 && $bin[$j][$i] == 0) || ($bin[$i][$j] ==0 && $bin[$j][$i] == 1)) ){ 
+                    $ver++;
+                }   
+              }
+            }
+          ?>
+            <p>Es del tipo</p>
+            <?php
+            if($ver>0){
+              echo "ES Dirigido! <br/>";
+            }
+            else{
+              echo "Es NO Dirigido! <br/>";
+            } 
+            ?>
         </div>
       </div>
       <div class="row">
@@ -232,56 +224,5 @@ for($i=0; $i<2; $i++){
         </div>
       </div>
     </div>
-  </body>
-</html>
-<?php
-if ($_POST["nodoinicio"] == $_POST["nodofinal"]){
-    echo "La distancia es igual a 0 por lo tanto la duración es 0";
-}
-else{
-   echo "hola";
-/* for($i=0; $i<3; $i++){
-   for($j=0; $j<3; $j++){
-     if ($peso[i][j]  > 0){
-
-     }
-     
-   }
-
-  
-   function dijkstra($grafo, $source(NOSE), $target (NOSE)){
-      $vertices = array ();
-      $neighbours = array ();
-      $path = array ();
-      foreach ($grafo as $edge){
-          array_push($vertices, $edge[0], $edge[1]);
-          $neighbours[$edge[0][] = array('endeEdge'-> $edge[1], 'cost'-> $edge[2]);
-      
-        }
-      $vertices = array_unique($vertices);
-
-      foreach ($vertices as $vertex){
-          $dist[$vertex] = INF;
-          $previous[$vertex] = NULL;
-      }
-
-      $dist[$source] = 0;
-      $g =$vertices;
-      while (count($g) > 0){
-       $min = INF;
-       foreach ($g as $vertex){
-        if ($dist[$vertex]  < $min){
-           $min = $dist[$vertex];
-           $u =
-        }       
-    }
-       }   
-      }
-      } 
-   } */ 
-}
-?>
-
-
   </body>
 </html>
