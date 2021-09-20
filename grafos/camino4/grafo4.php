@@ -232,26 +232,22 @@
     $i=0;   
     for($i=0; $i<3; $i++){
       for($j=0; $j<4; $j++){
-        if($i != $j && $j > $i){  
-          if($bin[$i][$j] ==1 || $bin[$j][$i] ==1 ){
+        if(($i != $j && $j > $i) && ($bin[$i][$j] ==1 || $bin[$j][$i] ==1 )){  
               $cont++;
-              }
           }   
         }
       }  
       if ($cont>=3){
-        echo 'CONEXO!!';
-        echo ('<br/>');
+        echo "CONEXO!! <br/>";
+
       }
       else{
         echo "NO CONEXO!! <br/>";
       }
       for($i=0; $i<3; $i++){
         for($j=0; $j<4; $j++){
-          if($i != $j && $j > $i){  
-            if(($bin[$i][$j] ==1 && $bin[$j][$i] == 0) || ($bin[$i][$j] ==0 && $bin[$j][$i] == 1) ){
+          if(($i != $j && $j > $i) && (($bin[$i][$j] ==1 && $bin[$j][$i] == 0) || ($bin[$i][$j] ==0 && $bin[$j][$i] == 1) )){  
                 $ver++;
-            }
           }   
         }
       }
